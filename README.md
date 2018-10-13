@@ -1,4 +1,4 @@
-|URL                  |method|優先順位|
+|URL                  |HTTP|説明|
 |:--                  |--:   |:--|
 |api/users/sign_in    |POST  ||
 |api/users/sign_up    |POST  ||
@@ -18,8 +18,8 @@ POST users/sign_in
 ```json
 {
   "user": {
-    "email": , // str
-    "password": // str
+    "email": "str",
+    "password": "str"
   }
 }
 ```
@@ -28,7 +28,7 @@ POST users/sign_in
 // 成功の場合 ( status: 200 )
 {
   "user": {
-    // userオブジェクト
+    "オブジェクト": "user参照"
   }
 }
 
@@ -51,8 +51,8 @@ POST users/sign_up
 ```json
 {
   "user": {
-    "email": , // str
-    "password": // str
+    "email": "str",
+    "password": "str"
   }
 }
 ```
@@ -61,7 +61,7 @@ POST users/sign_up
 // 成功の場合 ( status: 200 )
 {
   "user": {
-    // userオブジェクト
+    "オブジェクト": "user参照"
   }
 }
 
@@ -73,8 +73,8 @@ POST users/sign_up
 ###### user
 ```json
 {
-  "id": , // int
-  "name": // str
+  "id": "int",
+  "name": "str"
 }
 
 ```
