@@ -44,9 +44,9 @@ export default {
           // エラー内容をdataに入れる。
           this.errors = response.data
         } else {
-          // リダイレクト先指定。(router入れてから)
-          // await this.$router.go()
-          // this.$router.push('/users')
+          // リダイレクト先指定。
+          await this.$router.go()
+          this.$router.push('/users')
         }
       } catch (error) {
         // サーバーもしくはネットワークのエラーが返ってきた場合の処理。

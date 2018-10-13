@@ -42,6 +42,9 @@ export default {
     async  newUserSession () {
       try {
         const response = await http.post('/api/users/sign_in', this.user)
+        // リダイレクト先指定。
+        await this.$router.go()
+        this.$router.push('/')
       } catch (error) {
         // サーバーもしくはネットワークのエラーが返ってきた場合の処理。
         console.log(error)

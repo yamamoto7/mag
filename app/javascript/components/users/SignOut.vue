@@ -20,9 +20,9 @@ export default {
     async destroyUserSession () {
       try {
         await http.delete('/api/users/sign_out')
-        // リダイレクト先指定。(router入れてから)
-        // await this.$router.go()
-        // this.$router.push('/')
+        // リダイレクト先指定。
+        await this.$router.go()
+        this.$router.push('/')
       } catch (error) {
         // サーバーもしくはネットワークのエラーが返ってきた場合の処理。
         console.log(error)
