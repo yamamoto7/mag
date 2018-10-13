@@ -1,8 +1,8 @@
 |URL                  |HTTP|説明|
 |:--                  |--:   |:--|
-|api/users/sign_in    |POST  ||
-|api/users/sign_up    |POST  ||
-|api/users/sign_out   |DELETE||
+|api/users/sign_in    |POST  |ユーザーログイン|
+|api/users/sign_up    |POST  |ユーザー登録|
+|api/users/sign_out   |DELETE|ユーザーログアウト|
 |api/users/profile    |POST  ||
 |api/users/profile    |GET   ||
 |api/users/:id/profile|GET   ||
