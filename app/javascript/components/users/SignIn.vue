@@ -46,7 +46,7 @@ export default {
         // サーバーもしくはネットワークのエラーが返ってきた場合の処理。
         console.log(error)
       }
-    },
+    }
   }
 }
 </script>
