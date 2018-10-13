@@ -5,7 +5,7 @@ ruby '2.5.0'
 gem 'rails', '~> 5.2.1'
 
 # DB
-gem 'sqlite3'
+gem 'mysql2'
 
 # Server
 gem 'puma', '~> 3.11'
