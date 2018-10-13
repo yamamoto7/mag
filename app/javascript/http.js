@@ -35,9 +35,9 @@ const http = {
     }
   },
 
-  async delete (url, data) {
+  async delete (url) {
     try {
-      return await this.request('delete', url, data)
+      return await this.request('delete', url)
     } catch (err) {
       return Promise.reject(err)
     }

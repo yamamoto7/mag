@@ -24,7 +24,7 @@ export default {
     return {
       // フォームなどで送信する亀の情報を保存
       user: {
-        email: 'yamamoto2@gmail.com',
+        email: 'yamamoto@gmail.com',
         password: 'pppppppp',
       }
     }
@@ -67,4 +67,4 @@ export default {
 </script>
 
 <style scoped>
-<style>
+</style>
