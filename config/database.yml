@@ -4,9 +4,9 @@ development:
   reconnect: false
   database: agell_development
   pool: 5
-  username: Rails.application.credentials.MYSQL.DEV.USER
-  password: Rails.application.credentials.MYSQL.DEV.PASSWORD
-  host: Rails.application.credentials.MYSQL.HOST
+  username: root
+  password:
+  host: localhost
 
 test:
   adapter: mysql2
@@ -14,10 +14,9 @@ test:
   reconnect: false
   database: agell_test
   pool: 5
-  username: Rails.application.credentials.MYSQL.TEST.USER
-  password: Rails.application.credentials.MYSQL.TEST.PASSWORD
-  host: Rails.application.credentials.MYSQL.HOST
-
+  username: root
+  password: 
+  host: localhost
 
 production:
   adapter: mysql2
@@ -25,7 +24,6 @@ production:
   reconnect: false
   database: agell_production
   pool: 5
-  username: Rails.application.credentials.MYSQL.PROD.USER
-  password: Rails.application.credentials.MYSQL.PROD.PASSWORD
-  host: Rails.application.credentials.MYSQL.HOST
+  username: Rails.application.credentials[:MYSQL][:PROD][:USER]
+  password: Rails.application.credentials[:MYSQL][:PROD][:PASSWORD]
 
