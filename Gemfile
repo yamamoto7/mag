@@ -13,6 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'actioncable'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'dotenv-rails'
 
 # Back
 gem 'turbolinks', '~> 5'
