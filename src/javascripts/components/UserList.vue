@@ -22,7 +22,6 @@ export default {
   async mounted () {
     const response = await http.get('/api/users')
     this.users = response.data
-    console.log(response.data)
  },
   methods: {
   }
