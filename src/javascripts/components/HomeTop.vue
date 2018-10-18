@@ -6,6 +6,7 @@
     <sign-in></sign-in>
     <sign-out></sign-out>
     <user-list></user-list>
+    <show-detail></show-detail>
   </div>
 </template>
 
@@ -15,13 +16,15 @@ import SignUp from './users/SignUp.vue'
 import SignIn from './users/SignIn.vue'
 import SignOut from './users/SignOut.vue'
 import UserList from './UserList.vue'
+import ShowDetail from './users/ShowDetail.vue'
 export default {
   components: {
     GetInfo,
     SignUp,
     SignIn,
     SignOut,
-    UserList
+    UserList,
+    ShowDetail
   }
 }
 </script>
