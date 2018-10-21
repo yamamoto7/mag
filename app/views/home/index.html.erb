@@ -1,6 +1,8 @@
-<% if user_signed_in? %>
-  <user-header></user-header>
-<% else %>
-  user is not signed in
-<% end %>
-<router-view/>
+<div id="app">
+  <% if user_signed_in? %>
+    <user-header></user-header>
+  <% else %>
+    user is not signed in
+  <% end %>
+  <router-view/>
+</div>
