@@ -5,6 +5,9 @@ import UserHeader from '../javascripts/components/layout/UserHeader.vue'
 import UserSignIn from '../javascripts/components/users/SignIn.vue'
 import UserSignUp from '../javascripts/components/users/SignUp.vue'
 
+// リセットcssとか読み込む用
+import './style.scss'
+
 new Vue({
   router,
   components: {
