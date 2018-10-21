@@ -6,6 +6,7 @@ class Api::UsersController < ApplicationController
     render json: User.all
   end
   def show
-    render json: User.find(params[:id])
+    @user = User.find(params[:id])
+    @have_already_liked = current_user.likes_users.exists?(id: params[:id])
   end
 end

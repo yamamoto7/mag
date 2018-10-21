@@ -17,7 +17,8 @@ export default {
   },
   async mounted () {
     const response = await http.get('/api/users/' + this.user_id)
-    this.user = response.data
+    console.log(response.data)
+    this.user = response.data.user
   },
   methods: {
   }
