@@ -7,6 +7,7 @@ class Api::UsersController < ApplicationController
   end
   def show
     @user = User.find(params[:id])
+    # イイネ済みかどうかを判断して、booleanで持つ
     @have_already_liked = current_user.likes_users.exists?(id: params[:id])
   end
 end
