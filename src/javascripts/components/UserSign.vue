@@ -13,4 +13,5 @@ export default {
 </script>
 
 <style scoped>
+@import '../../style/user_sign.scss'
 </style>
