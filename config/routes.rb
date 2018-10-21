@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   get '/examples' => 'home#index'
 
-  # ログイン済みの場合のルート
   authenticated :user do
-    root 'home#top'
+    # ログイン済みの場合のルート
+    @users_route = 'home#top'
+    root @users_route
+    get '/users/:id' => @users_route
   end
 
   # 未ログインの場合のルート

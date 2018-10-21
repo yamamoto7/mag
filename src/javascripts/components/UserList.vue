@@ -5,6 +5,7 @@
       v-for="user_item in users"
       v-bind:key="user_item.id"
     >
+    <router-link :to="{ name: 'UserShowDetail', params: { user_id: user_item.id }}">詳細</router-link>
     {{ user_item.id }}/{{ user_item.email }}
     </div>
   </div>
