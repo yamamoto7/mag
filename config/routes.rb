@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root 'home#new'
   get '/examples' => 'home#index'
 
+  get '/sign_in' => 'users#new_session'
+  get '/sign_up' => 'users#new_registration'
+
   devise_for :user, only: []
 
   namespace :api, defaults: { format: :json } do
