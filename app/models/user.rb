@@ -12,4 +12,6 @@ class User < ApplicationRecord
   has_many :room_users
   has_many :chat_rooms, through: :room_users
 
+  has_many :survey_answers
+  has_many :surveys, through: :survey_answers
 end

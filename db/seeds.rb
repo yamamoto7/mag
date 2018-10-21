@@ -20,5 +20,5 @@ Survey.create!(title: 'おためしアンケート1')
 Survey.create!(title: 'おためしアンケート2')
 Survey.create!(title: 'おためしアンケート3')
 
-SurveyAnswer.create!(user_id: 1, survey: 1)
-SurveyAnswer.create!(user_id: 1, survey: 3)
+SurveyAnswer.create!(user_id: 1, survey_id: 1)
+SurveyAnswer.create!(user_id: 1, survey_id: 3)
