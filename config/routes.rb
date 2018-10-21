@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'home#new'
+  get '/examples' => 'home#index'
+
   devise_for :user, only: []
 
   namespace :api, defaults: { format: :json } do
