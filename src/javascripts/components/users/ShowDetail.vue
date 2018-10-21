@@ -24,4 +24,5 @@ export default {
 </script>
 
 <style scoped>
+@import '../../../style/users/show_detail.scss'
 </style>

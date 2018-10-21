@@ -29,4 +29,5 @@ export default {
 </script>
 
 <style scoped>
+@import '../../style/user_list.scss'
 </style>
