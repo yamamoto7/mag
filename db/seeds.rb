@@ -10,3 +10,8 @@ LikesUser.create!(user_id: 2, to_likes_user_id: 3, status: 1)
 LikesUser.create!(user_id: 3, to_likes_user_id: 1, status: 1)
 LikesUser.create!(user_id: 3, to_likes_user_id: 4, status: 1)
 LikesUser.create!(user_id: 4, to_likes_user_id: 3, status: 1)
+
+ChatRoom.create!()
+
+RoomUser.create!(user_id: 1, chat_room_id: 1)
+RoomUser.create!(user_id: 3, chat_room_id: 1)
