@@ -15,7 +15,7 @@ export default new Router({
       component: HomeTop
     },
     {
-      path: '/new',
+      path: '/',
       name: 'UserSign',
       component: UserSign
     }
