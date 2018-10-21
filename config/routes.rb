@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
-  root 'home#new'
   get '/examples' => 'home#index'
 
-  get '/sign_in' => 'users#new_session'
+  # ログイン済みの場合のルート
+  authenticated :user do
+    root 'home#top'
+  end
+
+  # 未ログインの場合のルート
+  root 'users#new_session'
   get '/sign_up' => 'users#new_registration'
+
 
   devise_for :user, only: []
 
