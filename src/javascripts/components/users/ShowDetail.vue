@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>〇〇さんの詳細({{ this.$route.params.user_id }}番)</h2>
-    {{ user.id }}/{{ user.email }}
+    {{ user.id }}/{{ user.email }}/{{ this.have_already_liked }}
   </div>
 </template>
 
@@ -12,6 +12,7 @@ export default {
   data () {
     return {
       user_id: this.$route.params.user_id,
+      have_already_liked: true,
       user: ''
     }
   },
@@ -19,6 +20,7 @@ export default {
     const response = await http.get('/api/users/' + this.user_id)
     console.log(response.data)
     this.user = response.data.user
+    this.have_already_liked = response.data.have_already_liked
   },
   methods: {
   }
