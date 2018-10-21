@@ -1,6 +1,7 @@
 import Vue from 'vue/dist/vue.esm'
 import Router from 'vue-router'
 import HomeTop from '../components/HomeTop.vue'
+import UserList from '../components/UserList.vue'
 
 Vue.use(Router)
 
@@ -15,8 +16,8 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'HomeTop',
-      component: HomeTop
+      name: 'UserList',
+      component: UserList
     }
   ]
 })
