@@ -23,6 +23,9 @@ Rails.application.routes.draw do
       resource :sign_in, only: [:create], controller: :sessions # users/sign_in
       resource :sign_out, only: [:destroy], controller: :sessions #users/sign_out
       resource :sign_up, only: [:create], controller: :registrations # users/sign_up
+
+      get '/send_like' => 'likes#send_like'
+      get '/send_back_like' => 'likes#send_back_like'
     end
   end
 
