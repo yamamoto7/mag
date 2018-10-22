@@ -5,7 +5,7 @@
     </h2>
 
     <div>
-      {{ survey.id }}/{{ survey.title }} ({{survey.active && '実施中'　|| '未実施'}})
+      {{ survey.id }}/{{ survey.title }} ({{survey.active && '実施中' || '未実施'}})
       <survey-question-list
         v-bind:survey_title="survey.title"
         v-bind:survey_id="survey.id"
