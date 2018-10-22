@@ -9,12 +9,18 @@ class Api::Users::LikesController < ApplicationController
       # イイネを作成してマッチを成立させる
       LikesUser.create!(user_id: current_user.id,
                         to_likes_user_id: params[:user_id],
-                        status: :matched)
-      render json: {test: 1}
+                        status: 1)
+      like_create_frag = LikesUser.where(user_id: params[:user_id])
+                      .find_by(to_likes_user_id: current_user.id)
+                      .update(status: 1)
+      render json: like_create_frag
     # 上記以外の場合
     else
       # イイネを作成する
-      render json: {test: 2}
+      like_create_frag = LikesUser.create!(user_id: current_user.id,
+                        to_likes_user_id: params[:user_id],
+                        status: 0)
+      render json: like_create_frag
     end
   end
 end
