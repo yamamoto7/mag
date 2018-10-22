@@ -24,7 +24,7 @@ Rails.application.routes.draw do
       resource :sign_out, only: [:destroy], controller: :sessions # api/users/sign_out
       resource :sign_up, only: [:create], controller: :registrations # api/users/sign_up
 
-      resource :likes, only: [:create] # api/users/likes#create
+      resource :likes, only: [:create] # api/users/likes#
     end
   end
 
