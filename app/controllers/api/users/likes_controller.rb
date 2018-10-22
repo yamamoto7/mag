@@ -7,6 +7,9 @@ class Api::Users::LikesController < ApplicationController
     # 相手からのイイネをすでに受け取っていたら
     elsif current_user.liked_users.exists?(id: params[:user_id])
       # イイネを作成してマッチを成立させる
+      LikesUser.create!(user_id: current_user.id,
+                        to_likes_user_id: params[:user_id],
+                        status: :matched)
       render json: {test: 1}
     # 上記以外の場合
     else
