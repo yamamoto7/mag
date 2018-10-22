@@ -2,7 +2,9 @@
   <div>
     <h2>〇〇さんの詳細({{ this.$route.params.user_id }}番)</h2>
     {{ user.id }}/{{ user.email }}/{{ this.have_already_liked }}
-    <button @click="submitLike">いいね</button>
+    
+    <p v-if="have_already_liked">イイネ済みです</p>
+    <button v-else @click="submitLike">いいね</button>
   </div>
 </template>
 
@@ -13,7 +15,7 @@ export default {
   data () {
     return {
       user_id: this.$route.params.user_id,
-      have_already_liked: true,
+      have_already_liked: false,
       user: ''
     }
   },
@@ -27,7 +29,7 @@ export default {
     async submitLike () {
       try {
         const response = await http.post('/api/users/likes', {user_id: this.user_id})
-        console.log(response.data)
+        this.have_already_liked = response.data
       } catch (error) {
         console.log(error)
       }
