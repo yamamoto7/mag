@@ -1,10 +1,6 @@
 class Api::Users::LikesController < ApplicationController
-  # イイネ送る
-  def send_like
-    
-  end
-  # イイネ返す（これでマッチ成立）
-  def send_back_like
+  before_action :authenticate_user!
+  def create
     
   end
 end
