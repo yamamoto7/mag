@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   authenticated :user do
     # ログイン済みの場合のルート
-    @users_route = 'home#top'
-    root @users_route
-    get '/users/:id' => @users_route
+    users_route = 'home#top'
+    root users_route
+    get '/users/:id' => users_route
   end
 
   # 未ログインの場合のルート
