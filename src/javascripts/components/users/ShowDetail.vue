@@ -2,6 +2,7 @@
   <div>
     <h2>〇〇さんの詳細({{ this.$route.params.user_id }}番)</h2>
     {{ user.id }}/{{ user.email }}/{{ this.have_already_liked }}
+    <button @click="submitLike">いいね</button>
   </div>
 </template>
 
@@ -23,6 +24,14 @@ export default {
     this.have_already_liked = response.data.have_already_liked
   },
   methods: {
+    async submitLike () {
+      try {
+        const response = await http.post('/api/users/likes', {user_id: this.user_id})
+        console.log(response.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
   }
 }
 </script>
