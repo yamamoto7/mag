@@ -5,6 +5,8 @@ import UserList from '../components/UserList.vue'
 import UserShowDetail from '../components/users/ShowDetail.vue'
 import UserChatRoomList from '../components/users/ChatRoomList.vue'
 import UserChatRoom from '../components/users/ChatRoom.vue'
+import UserSign from '../components/UserSign.vue'
+import SurveyScreen from '../screens/SurveyScreen.vue'
 
 Vue.use(Router)
 
@@ -16,6 +18,11 @@ export default new Router({
       path: '/examples',
       name: 'HomeTop',
       component: HomeTop
+    },
+    {
+      path: '/surveys',
+      name: 'SurveyScreen',
+      component: SurveyScreen
     },
     {
       path: '/',

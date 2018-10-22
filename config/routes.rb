@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/examples' => 'home#index'
+  get '/surveys' => 'home#index'
 
   authenticated :user do
     # ログイン済みの場合のルート
@@ -24,13 +25,17 @@ Rails.application.routes.draw do
       resource :sign_up, only: [:create], controller: :registrations # api/users/sign_up
 
       resource :likes, only: [:create] # api/users/likes
-      resources :chats, only: [:index, :show] 
+      resources :chats, only: [:index, :show]
     end
     get '/users/get_info' => 'users#get_info'
     get '/users' => 'users#index'
     get '/users/:id' => 'users#show'
+
+    resources :surveys, only: %i[index], shallow: true do
+      post '/answer' => 'survey_answers#create'
+      get '/questions' => 'survey_questions#index'
+    end
+
+    mount ActionCable.server => '/cable'
   end
-
-  mount ActionCable.server => '/cable'
-
 end
