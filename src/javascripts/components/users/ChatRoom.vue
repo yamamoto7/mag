@@ -3,7 +3,7 @@
     <h2>チャットルーム</h2>
     <div v-for="message in messages">
       <div>
-        {{ message.message }}
+        {{ message.body }} / {{ message.user_id }}
       </div>
     </div>
     <div>
@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import http from '../../http'
+
 export default {
 data() {
   return {
@@ -22,7 +24,11 @@ data() {
     roomChannel: null,
   };
 },
-created() {
+async created() {
+  const response = await http.get('/api/users/chats/1')
+  console.log(response.data)
+  this.messages = response.data
+
   this.roomChannel = this.$cable.subscriptions.create( {channel: "RoomChannel", room_id: 1}, {
     received: (data) => {
       this.messages.push(data)
