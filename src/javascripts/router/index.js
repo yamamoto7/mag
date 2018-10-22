@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import HomeTop from '../components/HomeTop.vue'
 import UserList from '../components/UserList.vue'
 import UserShowDetail from '../components/users/ShowDetail.vue'
-import UserChatRooms from '../components/users/ChatRooms.vue'
+import UserChatRoomlist from '../components/users/ChatRoomList.vue'
 
 Vue.use(Router)
 
@@ -23,8 +23,8 @@ export default new Router({
     },
     {
       path: '/users/chats',
-      name: 'UserChatRooms',
-      component: UserChatRooms
+      name: 'UserChatRoomlist',
+      component: UserChatRoomlist
     },
     {
       path: '/users/:user_id',

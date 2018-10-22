@@ -17,7 +17,6 @@ import SignIn from './users/SignIn.vue'
 import SignOut from './users/SignOut.vue'
 import UserList from './UserList.vue'
 import ShowDetail from './users/ShowDetail.vue'
-import ChatRooms from './users/ChatRooms.vue'
 export default {
   components: {
     GetInfo,
@@ -25,8 +24,7 @@ export default {
     SignIn,
     SignOut,
     UserList,
-    ShowDetail,
-    ChatRooms
+    ShowDetail
   }
 }
 </script>
