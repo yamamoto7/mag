@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     users_route = 'home#top'
     root users_route
     get '/users/chats' => users_route
+    get '/users/chats/:id' => users_route
     get '/users/:id' => users_route
   end
 
