@@ -20,4 +20,5 @@ export default {
 </script>
 
 <style scoped>
+@import '../../../style/layout/user_header.scss'
 </style>

@@ -33,4 +33,5 @@ export default {
 </script>
 
 <style scoped>
+@import '../../../style/users/sign_out.scss'
 </style>
