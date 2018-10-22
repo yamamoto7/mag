@@ -23,14 +23,14 @@ export default new Router({
       component: UserList
     },
     {
-      path: '/users/chats',
-      name: 'UserChatRoomList',
-      component: UserChatRoomList
-    },
-    {
       path: '/users/chats/:room_id',
       name: 'UserChatRoom',
       component: UserChatRoom
+    },
+    {
+      path: '/users/chats',
+      name: 'UserChatRoomList',
+      component: UserChatRoomList
     },
     {
       path: '/users/:user_id',
