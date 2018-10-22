@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     # ログイン済みの場合のルート
     users_route = 'home#top'
     root users_route
+    get '/users/chats' => users_route
     get '/users/:id' => users_route
   end
 
@@ -16,16 +17,17 @@ Rails.application.routes.draw do
   devise_for :user, only: []
 
   namespace :api, defaults: { format: :json } do
-    get '/users/get_info' => 'users#get_info'
-    get '/users' => 'users#index'
-    get '/users/:id' => 'users#show'
     namespace :users do
       resource :sign_in, only: [:create], controller: :sessions # api/users/sign_in
       resource :sign_out, only: [:destroy], controller: :sessions # api/users/sign_out
       resource :sign_up, only: [:create], controller: :registrations # api/users/sign_up
 
       resource :likes, only: [:create] # api/users/likes
+      resources :chats, only: [:index, :show] 
     end
+    get '/users/get_info' => 'users#get_info'
+    get '/users' => 'users#index'
+    get '/users/:id' => 'users#show'
   end
 
 end
