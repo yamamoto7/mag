@@ -45,7 +45,7 @@ const http = {
 
   init () {
     // ルート設定
-    axios.defaults.baseURL = `http://localhost:5000`
+    axios.defaults.baseURL = `http://localhost:3000`
   }
 }
 

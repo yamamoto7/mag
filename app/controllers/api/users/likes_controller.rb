@@ -1,5 +1,9 @@
 class Api::Users::LikesController < ApplicationController
   before_action :authenticate_user!
+  def index
+    @users = current_user.liked_users
+    render json: @users
+  end
   def create
     # すでにイイネ送信済みだったら
     if current_user.likes_users.exists?(id: params[:user_id])
