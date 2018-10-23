@@ -1,31 +1,31 @@
-<template class='screen question--card'>
-  <div>
-    <h1>
+<template>
+  <div class='question--card'>
+    <h2 class='question--card__title'>
       {{question.id}}: {{question.title}}
-    </h1>
+    </h2>
 
-    次の選択肢から選んでね :)
+    <p class='answer--select__message'>
+      次の選択肢から選んでね :)
+    </p>
 
     <div class='survey-question--form'>
-      <ul>
-        <div
+      <div
+        class='flex-container flex--row'
+      >
+        <label
           v-for="(label, index) in this.question_labels"
-          class='flex-container flex--row'
+          class='survey-question--form__btn'
         >
-          <label
-            class='survey-question--form__btn'
-          >
-           <input
-            type='radio'
-            name='survey-type'
-            :value='index + 1'
-            @click='updateSurveyanswer'
-           >
-              {{label}}
-            </input>
-          </label>
-        </div>
-      </ul>
+         <input
+          type='radio'
+          name='survey-type'
+          :value='index + 1'
+          @click='updateSurveyAnswer'
+         >
+            {{label}}
+          </input>
+        </label>
+      </div>
       <button
         type="submit"
         @click="submitQuestionForm"
@@ -116,7 +116,7 @@ export default {
         console.log(error)
       }
     },
-    updateSurveyanswer (e) {
+    updateSurveyAnswer (e) {
       this.survey_answer_value = e.currentTarget.value;
     },
   },
