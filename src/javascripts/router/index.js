@@ -30,7 +30,7 @@ export default new Router({
       component: ReceivedLikesList
     },
     {
-      path: '/likes',
+      path: '/matchings',
       name: 'MatchingInfo',
       component: MatchingInfo
     },

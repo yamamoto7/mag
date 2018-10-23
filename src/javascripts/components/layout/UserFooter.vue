@@ -33,8 +33,8 @@ export default {
         },
         {
           id: 3,
-          path: '/users/chats',
-          name: 'UserChatRoomList',
+          path: '/matchings',
+          name: 'MatchingInfo',
           label: '✉',
           badge: 7
         },
