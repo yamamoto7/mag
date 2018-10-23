@@ -1,0 +1,17 @@
+.tabs{
+  width: 340px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+}
+.tab-item{
+  width: 160px;
+  height: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+.tab-item[active]{
+  color: #00A7E0;
+  border-bottom: 2px solid #00A7E0;
+}

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import http from '../http'
+import http from '../../http'
 
 export default {
   data () {
@@ -26,7 +26,7 @@ export default {
     }
   },
   async mounted () {
-    const response = await http.get('/api/users')
+    const response = await http.get('/api/users/likes')
     this.users = response.data
  },
   methods: {
@@ -35,5 +35,5 @@ export default {
 </script>
 
 <style scoped>
-@import '../../style/user_list.scss'
+@import '../../../style/users/received_likes_list.scss'
 </style>

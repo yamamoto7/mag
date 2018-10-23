@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get '/users/:id' => users_route
     get '/surveys' => 'home#index'
     get '/surveys/questions/:id' => 'home#index'
+    get '/likes' => users_route
+    get '/matchings' => users_route
   end
 
   # 未ログインの場合のルート
@@ -25,8 +27,8 @@ Rails.application.routes.draw do
       resource :sign_out, only: [:destroy], controller: :sessions # api/users/sign_out
       resource :sign_up, only: [:create], controller: :registrations # api/users/sign_up
 
-      resource :likes, only: [:create] # api/users/likes
-      resources :chats, only: [:index, :show]
+      resources :likes, only: [:index, :create]
+      resources :chats, only: [:index, :show] 
     end
     get '/users/get_info' => 'users#get_info'
     get '/users' => 'users#index'
