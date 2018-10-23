@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       resource :sign_out, only: [:destroy], controller: :sessions # api/users/sign_out
       resource :sign_up, only: [:create], controller: :registrations # api/users/sign_up
 
-      resource :likes, only: [:create] # api/users/likes
+      resources :likes, only: [:index, :create]
       resources :chats, only: [:index, :show] 
     end
     get '/users/get_info' => 'users#get_info'
