@@ -1,0 +1,51 @@
+footer{
+  width:100%;
+  text-align:center;
+  overflow:hidden;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 150px;
+  position: fixed;
+  bottom: 0;
+
+  background-color: #fff;
+}
+footer div{
+  width: 25%;
+  font-size: 30px;
+  color: #ddd;
+  position: relative;
+  border-radius: 6px;
+}
+
+
+.item[active]{
+  color: #000;
+}
+
+/* アイコン部 */
+
+.item[data-badge]:before {
+  color: #fff;
+  position: absolute;
+  display: inline-block;
+  font-weight: bold;
+  background-color: #f00;
+  border-radius: 50%;
+  font-size: .7em;
+  line-height: 1;
+  min-width: 1em;
+  padding: 3px;
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 3px #999;
+}
+
+.item[data-badge]:before {
+  top: 0;
+  right: 40px;
+  transform: translate(50%, -50%);
+  content: attr(data-badge)"";
+}
