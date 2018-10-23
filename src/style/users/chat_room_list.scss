@@ -1,0 +1,49 @@
+a{
+  text-decoration: none;
+}
+a:visited{
+  color: #444;
+}
+.room-item{
+  margin: 0 auto;
+  padding: 20px 10px;
+  width: 345px;
+  height: 100px;
+  border-bottom: 2px solid #ddd;
+  display: flex;
+}
+.image{
+  background-image: url('http://livedoor.blogimg.jp/blackmica911/imgs/3/1/31be8196.jpg');
+  width: 56px;
+  height: 56px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-size: cover;
+}
+.text{
+  width: 213px;
+  padding: 0 10px;
+}
+.user-name{
+  font-size: 14px;  
+}
+.user-message{
+  font-size: 8px;  
+}
+.info{
+  width: 56px;
+  text-align: center;
+}
+.time{
+  font-size: 8px;
+}
+.badge[data]:before{
+  margin-top: 10px;
+  display: inline-block;
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: red;
+  content: attr(data)"";
+}

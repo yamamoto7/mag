@@ -10,17 +10,18 @@
     >{{ page.label }}</div>
     </div>
     <div v-show="current_page == 1">1111</div>
-    <div v-show="current_page == 2">2222</div>
+    <user-chat-room-list v-show="current_page == 2"></user-chat-room-list>
   </div>
 </template>
 
 <script>
 import http from '../../http'
+import UserChatRoomList from './ChatRoomList.vue'
 
 export default {
   data () {
     return {
-      current_page: 1,
+      current_page: 2,
       pages: [
         {
           id: 1,
@@ -39,6 +40,9 @@ export default {
     async changePage (id) {
       this.current_page = id
     }
+  },
+  components: {
+    UserChatRoomList
   }
 }
 </script>

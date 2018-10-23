@@ -1,11 +1,20 @@
 <template>
   <div>
-    <h2>チャットルームリスト</h2>
     <div
       v-for="room_item in rooms"
       v-bind:key="room_item.id"
     >
-    {{ room_item.id }}
+      <router-link class="room-item" :to="{ name: 'UserChatRoom', params: { room_id: room_item.id }}">
+        <div class="image"></div>
+        <div class="text">
+          <div class="user-name">あや</div>
+          <div class="user-message">今度一緒にご飯食べよう</div>
+        </div>
+        <div class="info">
+          <div class="time">12:12</div>
+          <div class="badge" data="1"></div>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -29,4 +38,5 @@ export default {
 </script>
 
 <style scoped>
+@import '../../../style/users/chat_room_list.scss'
 </style>
