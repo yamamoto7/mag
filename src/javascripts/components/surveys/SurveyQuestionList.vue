@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import http from '../http'
+  import http from '../../http'
   import SurveyQuestionCard from './SurveyQuestionCard.vue'
 
   export default {
@@ -48,5 +48,5 @@
 </script>
 
 <style scoped>
-@import '../../style/survey_question_list.scss'
+@import '../../../style/surveys/survey_question_list.scss'
 </style>

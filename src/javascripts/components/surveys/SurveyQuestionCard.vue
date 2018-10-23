@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import http from '../http'
+import http from '../../http'
 
 export default {
   data() {
@@ -127,5 +127,5 @@ export default {
 </script>
 
 <style scoped>
-@import '../../style/survey_question_card.scss'
+@import '../../../style/surveys/survey_question_card.scss'
 </style>

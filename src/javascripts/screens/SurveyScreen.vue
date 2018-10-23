@@ -15,7 +15,7 @@
 
 <script>
   import http from '../http'
-  import SurveyQuestionList from '../components/SurveyQuestionList.vue'
+  import SurveyQuestionList from '../components/surveys/SurveyQuestionList.vue'
 
   export default {
     data () {
