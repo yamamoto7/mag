@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get '/users/chats' => users_route
     get '/users/chats/:id' => users_route
     get '/users/:id' => users_route
+    get '/likes' => users_route
   end
 
   # 未ログインの場合のルート

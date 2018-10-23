@@ -2,6 +2,7 @@ import Vue from 'vue/dist/vue.esm'
 import Router from 'vue-router'
 import HomeTop from '../components/HomeTop.vue'
 import UserList from '../components/UserList.vue'
+import ReceivedLikesList from '../components/users/ReceivedLikesList.vue'
 import UserShowDetail from '../components/users/ShowDetail.vue'
 import UserChatRoomList from '../components/users/ChatRoomList.vue'
 import UserChatRoom from '../components/users/ChatRoom.vue'
@@ -21,6 +22,11 @@ export default new Router({
       path: '/',
       name: 'UserList',
       component: UserList
+    },
+    {
+      path: '/likes',
+      name: 'ReceivedLikesList',
+      component: ReceivedLikesList
     },
     {
       path: '/users/chats/:room_id',

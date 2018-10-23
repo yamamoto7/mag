@@ -26,8 +26,8 @@ export default {
         },
         {
           id: 2,
-          path: '/',
-          name: 'LikesList',
+          path: '/likes',
+          name: 'ReceivedLikesList',
           label: 'G',
           badge: false
         },
