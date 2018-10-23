@@ -33,8 +33,8 @@ export default {
         },
         {
           id: 3,
-          path: '/',
-          name: 'RoomsList',
+          path: '/users/chats',
+          name: 'UserChatRoomList',
           label: '✉',
           badge: 7
         },
