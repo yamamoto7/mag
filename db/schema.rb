@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_015126) do
+ActiveRecord::Schema.define(version: 2018_10_23_134633) do
 
   create_table "chat_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2018_10_22_015126) do
     t.bigint "user_id"
     t.bigint "survey_id"
     t.bigint "survey_questions_id"
+    t.integer "value", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["survey_id"], name: "index_survey_answers_on_survey_id"
