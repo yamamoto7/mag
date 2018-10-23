@@ -26,15 +26,15 @@ export default {
         },
         {
           id: 2,
-          path: '/',
-          name: 'LikesList',
+          path: '/likes',
+          name: 'ReceivedLikesList',
           label: 'G',
           badge: false
         },
         {
           id: 3,
-          path: '/users/chats',
-          name: 'UserChatRoomList',
+          path: '/matchings',
+          name: 'MatchingInfo',
           label: '✉',
           badge: 7
         },

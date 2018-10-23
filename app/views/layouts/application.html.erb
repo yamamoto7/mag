@@ -2,12 +2,15 @@
 <html>
   <head>
     <title>Agell</title>
+    <meta name="viewport" content="width=375" >
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_pack_tag 'main' %>
 
   </head>
 
-  <body style="margin: 0;">
+  <body>
     <%= yield %>
     <%= javascript_pack_tag 'application' %>
   </body>
