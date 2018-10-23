@@ -39,7 +39,7 @@ survey = Survey.first
   落ち込んでもすぐに立ち直る方だ
   今の自分は本当の自分ではないと思うことがある
   ちょっとした欠点でも気になる方だ
-].each { |q_title| survey.survey_questions.create!(title: q_title) }
+].each { |q_title| survey.survey_questions.create!(title: q_title,question_type: 4) }
 
 # SurveyAnswer.create!(user_id: 1, survey_id: 1)
 # SurveyAnswer.create!(user_id: 1, survey_id: 3)
