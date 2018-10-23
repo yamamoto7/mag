@@ -1,12 +1,17 @@
 <template>
   <div>
-    <h2>ユーザーリスト</h2>
-    <div
-      v-for="user_item in users"
-      v-bind:key="user_item.id"
-    >
-    <router-link :to="{ name: 'UserShowDetail', params: { user_id: user_item.id }}">詳細</router-link>
-    {{ user_item.id }}/{{ user_item.email }}
+    <div class="box-wrapper">
+      <div
+        class="box"
+        v-for="user_item in users"
+        v-bind:key="user_item.id"
+      >
+        <router-link class="top-image" :to="{ name: 'UserShowDetail', params: { user_id: user_item.id }}"></router-link>
+        <div class="bottom">
+          <div class="left">あや(24)</div>
+          <div class="right">▶</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
