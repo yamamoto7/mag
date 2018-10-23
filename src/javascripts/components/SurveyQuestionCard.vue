@@ -1,22 +1,126 @@
-<template>
-  <p>
-    {{index}}: {{question.title}}
-  </p>
+<template class='screen question--card'>
+  <div>
+    <h1>
+      {{question.id}}: {{question.title}}
+    </h1>
+
+    次の選択肢から選んで
+
+    <div class='survey-question--form'>
+      <ul>
+        <div
+          v-for="(label, index) in this.question_labels"
+          class='flex-container flex--row'
+        >
+          <label
+            class='survey-question--form__btn'
+          >
+           <input
+            type='radio'
+            name='survey-type'
+            :value='index + 1'
+            @click='updateSurveyanswer'
+           >
+              {{label}}
+            </input>
+          </label>
+        </div>
+      </ul>
+      <button
+        type="submit"
+        @click="submitQuestionForm"
+      >
+        確定する
+      </button>
+    </div>
+
+    <div>
+      <button
+        @click="ClickBeforeLink"
+        class='before_link_btn'
+      >
+        前へ
+      </button>
+      <button
+        @click="ClickNextLink"
+        class='next_link_btn'
+      >
+        次へ
+      </button>
+    </div>
+  </div>
 </template>
 
 <script>
+import http from '../http'
+
 export default {
   data() {
     return {
+      question_id: Number(this.$route.params.question_id),
+      question: {},
+      question_labels: [],
+      survey_answer_value: null,
     }
   },
-  props: ['question', 'index'],
   methods: {
+    ClickNextLink(e){
+      this.$router.push({
+        name: 'SurveyQuestionScreen',
+        params: { question_id: this.question_id += 1 }
+      });
+
+      this.fetchQuestionView();
+    },
+    ClickBeforeLink(){
+      this.$router.push({
+        name: 'SurveyQuestionScreen',
+        params: { question_id: this.question_id -= 1 }
+      });
+
+      this.fetchQuestionView();
+    },
+    async fetchQuestionView(){
+      const res = await http.get(`/api/survey/questions/${this.question_id}`);
+      this.question = res.data;
+
+      this.renderQuestion();
+    },
+    renderQuestion() {
+      this.question_labels = [];
+      for ( let i = 0; i < this.question.question_type; i++){
+        this.question_labels.push(`sample ${i}`);
+      }
+    },
+    async submitQuestionForm() {
+      if (!this.survey_answer_value) return;
+
+      try {
+        const response = await http.post(`/api/surveys/${this.question.survey_id}/answer`, {
+          value: this.survey_answer_value,
+          survey_questions_id: this.question_id
+        });
+
+        await this.$router.go()
+        if (this.question_id !== 18) {
+          this.$router.push({
+            name: 'SurveyQuestionScreen',
+            params: { question_id: this.question_id += 1 }
+          });
+        } else {
+          // TODO 最後の設問の時だけ別のところに飛ばす
+          this.$router.push('/')
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    updateSurveyanswer (e) {
+      this.survey_answer_value = e.currentTarget.value;
+    },
   },
   async mounted() {
-  // const res = await http.post('/api/daily_reports/suggestion', {id: this.dailyReport.id})
-  // console.log(res.data)
-  // this.suggestReports = res.data
+    this.fetchQuestionView();
   },
 };
 </script>

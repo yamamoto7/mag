@@ -1,20 +1,14 @@
 <template>
   <div>
-    <h2>question</h2>
-
-    {{survey_title}}
-
-    <!-- <div
-      v-for='(question, index) in questions'
-      v-bind:key='question.id'
-    >
-      <survey-question-card
-        :question='question'
-        :key='question.id'
-        :index='index + 1'
-      ></survey-question-card>
-    </div> -->
-
+    <h3>
+      {{ survey.id }}/{{ survey.title }} ({{survey.active && '実施中' || '未実施'}})
+    </h3>
+    <div v-if='this.$route.params.question_id'>
+      <survey-question-card />
+    </div>
+    <div v-else>
+      <button @click='startSurvey'>診断する</button>
+    </div>
   </div>
 </template>
 
@@ -25,24 +19,26 @@
   export default {
     data () {
       return {
-        questions: []
+        questions: [],
+        survey: {},
       }
     },
     props: ['survey_title', 'survey_id'],
     async mounted () {
       // FIXME このコンポーネント render するときに親コンポーネント (survey.vue)から引数でうけとりたい
-      this.hoge();
+      const q_response = await http.get('/api/surveys/1/questions');
+      this.questions = q_response.data;
+      const surveyId = 1;
+      const s_response = await http.get(`/api/surveys?survey_id=${surveyId}`);
+      this.survey = s_response.data;
 
-      const response = await http.get('/api/surveys/1/questions');
-      this.questions = response.data;
     },
     methods: {
-      hoge() {
-        self = this
-        console.log(self.survey_id);
-        console.log(this.survey_title);
-        console.log('hoge');
-        // console.log(this.survey)
+      startSurvey: function(){
+        this.$router.push({
+          name: 'SurveyQuestionScreen',
+          params: { question_id: this.question_id = 1 }
+        });
       }
     },
     components: {
