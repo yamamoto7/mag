@@ -4,7 +4,7 @@
       {{question.id}}: {{question.title}}
     </h1>
 
-    次の選択肢から選んで
+    次の選択肢から選んでね :)
 
     <div class='survey-question--form'>
       <ul>
@@ -88,8 +88,9 @@ export default {
     },
     renderQuestion() {
       this.question_labels = [];
+      const text = ['当てはまる', '少し当てはまる', 'あまり当てはまらない', '当てはまらない']
       for ( let i = 0; i < this.question.question_type; i++){
-        this.question_labels.push(`sample ${i}`);
+        this.question_labels.push(text[i]);
       }
     },
     async submitQuestionForm() {

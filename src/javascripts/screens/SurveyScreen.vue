@@ -21,7 +21,6 @@
     data () {
       return {
         survey: {},
-        answers: [],
       }
     },
     async mounted () {
