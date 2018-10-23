@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2018_10_22_015126) do
   create_table "survey_questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "survey_id"
     t.string "title"
+    t.integer "question_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["survey_id"], name: "index_survey_questions_on_survey_id"
