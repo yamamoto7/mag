@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get '/examples' => 'home#index'
-  get '/surveys' => 'home#index'
 
   authenticated :user do
     # ログイン済みの場合のルート
@@ -9,6 +8,8 @@ Rails.application.routes.draw do
     get '/users/chats' => users_route
     get '/users/chats/:id' => users_route
     get '/users/:id' => users_route
+    get '/surveys' => 'home#index'
+    get '/surveys/questions/:id' => 'home#index'
   end
 
   # 未ログインの場合のルート
@@ -35,6 +36,7 @@ Rails.application.routes.draw do
       post '/answer' => 'survey_answers#create'
       get '/questions' => 'survey_questions#index'
     end
+    get 'survey/questions/:id' => 'survey_questions#show'
 
     mount ActionCable.server => '/cable'
   end

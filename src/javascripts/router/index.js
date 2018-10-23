@@ -24,6 +24,11 @@ export default new Router({
       component: SurveyScreen
     },
     {
+      path: '/surveys/questions/:question_id',
+      name: 'SurveyQuestionScreen',
+      component: SurveyScreen
+    },
+    {
       path: '/',
       name: 'UserList',
       component: UserList
