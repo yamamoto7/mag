@@ -19,7 +19,7 @@
       </div>
       <div class="input-area">
         <input class="input-box" v-model="msgBox" placeholder="message here"></input>
-        <button class="input-btn" v-if="roomChannel" @click="speak">送信</button>
+        <button class="input-btn" @click="speak">送信</button>
       </div>
     </div>
     <div id="btm"></div>
@@ -40,27 +40,29 @@ data() {
   };
 },
 async mounted () {
+  try{
     const response = await http.get('/api/users/get_info')
     this.user = response.data
-},
-async created() {
-  const response = await http.get('/api/users/chats/' + this.roomId)
-  this.messages = response.data
-
-  this.roomChannel = await this.$cable.subscriptions.create( {channel: "RoomChannel", room_id: this.roomId}, {
-    received: async (data) => {
-      await this.messages.push(data['message'])
-      document.querySelector("#btm").scrollIntoView(true)
-    },
-  })
-  document.querySelector("#btm").scrollIntoView(true)
+    const userResponse = await http.get('/api/users/chats/' + this.roomId)
+    this.messages = userResponse.data
+    this.roomChannel = await this.$cable.subscriptions.create( {channel: "RoomChannel", room_id: this.roomId, user_id: this.user.id}, {
+      received: async (data) => {
+        await this.messages.push(data['message'])
+        document.querySelector("#btm").scrollIntoView(true)
+      }
+    })
+    document.querySelector("#btm").scrollIntoView(true)
+  } catch(e) {
+  }
 },
 methods: {
   speak() {
-    this.roomChannel.perform('speak', {message: this.msgBox})
-    this.msgBox = ''
-  },
-},
+    if(this.msgBox !== ""){
+      this.roomChannel.perform('speak', {message: this.msgBox})
+      this.msgBox = ""
+    }
+  }
+}
 }
 </script>
 
