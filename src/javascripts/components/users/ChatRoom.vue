@@ -43,7 +43,8 @@ async mounted () {
   try{
     const response = await http.get('/api/users/get_info')
     this.user = response.data
-    await http.put('/api/users/chats/have_read_room', {room_id: this.roomId})
+    const res = await http.put('/api/users/chats/have_read_room', {room_id: this.roomId})
+    console.log(res.data)
     const userResponse = await http.get('/api/users/chats/' + this.roomId)
     this.messages = userResponse.data
     this.roomChannel = await this.$cable.subscriptions.create( {channel: "RoomChannel", room_id: this.roomId, user_id: this.user.id}, {
