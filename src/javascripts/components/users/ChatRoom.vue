@@ -4,22 +4,22 @@
       <div
           class="message-box"
           v-for="message in messages"
-          :mine="message.id == 2"
-          :others="message.id != 2"
+          :mine="message.user_id == user.id"
+          :others="message.user_id != user.id"
       >
-        <div class="time" v-if="message.id == 2">
+        <div class="time" v-if="message.user_id == user.id">
           <div class="read">既読</div>
-          <div class="send">{{ message.created_at }}</div>
+          <div class="send">{{ message.submit_time }}</div>
         </div>
-        <div class="prof-image" v-if="message.id != 2"></div>
+        <div class="prof-image" v-if="message.user_id != user.id"></div>
         <div class="message">{{ message.body }}</div>
-        <div class="time" v-if="message.id != 2">
-          <div class="send">{{ message.created_at }}</div>
+        <div class="time" v-if="message.user_id != user.id">
+          <div class="send">{{ message.submit_time }}</div>
         </div>
       </div>
-      <div>
-        <input v-model="msgBox" placeholder="message here"></input>
-        <button v-if="roomChannel" @click="speak">送信</button>
+      <div class="input-area">
+        <input class="input-box" v-model="msgBox" placeholder="message here"></input>
+        <button class="input-btn" v-if="roomChannel" @click="speak">送信</button>
       </div>
     </div>
     <div id="btm"></div>
@@ -34,17 +34,20 @@ data() {
   return {
     msgBox: "",
     messages: [],
+    roomId: this.$route.params.room_id,
     roomChannel: null,
+    user: []
   };
 },
 async mounted () {
+    const response = await http.get('/api/users/get_info')
+    this.user = response.data
 },
 async created() {
-  const response = await http.get('/api/users/chats/1')
-  console.log(response.data)
+  const response = await http.get('/api/users/chats/' + this.roomId)
   this.messages = response.data
 
-  this.roomChannel = await this.$cable.subscriptions.create( {channel: "RoomChannel", room_id: 1}, {
+  this.roomChannel = await this.$cable.subscriptions.create( {channel: "RoomChannel", room_id: this.roomId}, {
     received: async (data) => {
       await this.messages.push(data['message'])
       document.querySelector("#btm").scrollIntoView(true)
@@ -54,7 +57,8 @@ async created() {
 },
 methods: {
   speak() {
-    this.roomChannel.perform('speak', {message: this.msgBox});
+    this.roomChannel.perform('speak', {message: this.msgBox})
+    this.msgBox = ''
   },
 },
 }

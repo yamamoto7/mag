@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2018_10_21_083100) do
     t.bigint "user_id"
     t.bigint "chat_room_id"
     t.string "body"
+    t.string "submit_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chat_room_id"], name: "index_chat_messages_on_chat_room_id"

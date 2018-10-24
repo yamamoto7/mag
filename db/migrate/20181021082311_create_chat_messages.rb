@@ -4,6 +4,7 @@ class CreateChatMessages < ActiveRecord::Migration[5.2]
       t.references :user
       t.references :chat_room
       t.string :body
+      t.string :submit_time
 
       t.timestamps
     end

@@ -69,3 +69,24 @@
 .read{
   font-size: 8px;
 }
+
+.input-area{
+  text-align: center;
+  padding: 10px 0;
+}
+.input-box{
+  border-radius: 5px;
+  border: 0;
+  background-color: #ddd;
+  height: 30px;
+  padding: 0 8px;
+  width: 240px;
+}
+.input-btn{
+  background-color: #00bfff;
+  border: 0;
+  color: #fff;
+  height: 30px;
+  border-radius: 4px;
+  padding: 0 8px;
+}

@@ -6,7 +6,9 @@ class RoomChannel < ApplicationCable::Channel
 
   # メッセージをブロードキャストするためのアクション
   def speak(data)
-    message = ChatMessage.create(chat_room_id: params[:room_id], user_id: 1, body: data['message'])
+    message = ChatMessage.create(chat_room_id: params[:room_id], user_id: 1, body: data['message'], submit_time: "#{DateTime.now.hour}:#{DateTime.now.min}")
     ActionCable.server.broadcast "message_channel_#{params['room_id']}", message: message
   end
 end
+
+

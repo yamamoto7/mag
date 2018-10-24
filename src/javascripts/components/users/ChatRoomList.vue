@@ -30,7 +30,7 @@ export default {
   },
   async mounted () {
     const response = await http.get('/api/users/chats')
-    this.rooms = response.data
+    this.rooms = await response.data
  },
   methods: {
   }
