@@ -8,7 +8,7 @@
           :others="message.user_id != user.id"
       >
         <div class="time" v-if="message.user_id == user.id">
-          <div class="read">既読</div>
+          <div class="read" v-if="message.have_read">既読</div>
           <div class="send">{{ message.submit_time }}</div>
         </div>
         <div class="prof-image" v-if="message.user_id != user.id"></div>
@@ -43,16 +43,19 @@ async mounted () {
   try{
     const response = await http.get('/api/users/get_info')
     this.user = response.data
+    await http.put('/api/users/chats/have_read_room', {room_id: this.roomId})
     const userResponse = await http.get('/api/users/chats/' + this.roomId)
     this.messages = userResponse.data
     this.roomChannel = await this.$cable.subscriptions.create( {channel: "RoomChannel", room_id: this.roomId, user_id: this.user.id}, {
       received: async (data) => {
         await this.messages.push(data['message'])
         document.querySelector("#btm").scrollIntoView(true)
+        await http.put('/api/users/chats/have_read_message', {message_id: data['message'].id})
       }
     })
     document.querySelector("#btm").scrollIntoView(true)
   } catch(e) {
+    console.log(e)
   }
 },
 methods: {
