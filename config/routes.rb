@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       resources :likes, only: [:index, :create]
       resources :chats, only: [:index, :show] 
       put '/chats/have_read_room' => 'chats#have_read_room'
+      put '/chats/get_new_message_count' => 'chats#get_new_message_count'
     end
     get '/users/get_info' => 'users#get_info'
     get '/users' => 'users#index'
