@@ -50,7 +50,7 @@ async mounted () {
       received: async (data) => {
         await this.messages.push(data['message'])
         document.querySelector("#btm").scrollIntoView(true)
-        await http.put('/api/users/chats/have_read_message', {message_id: data['message'].id})
+        await http.put('/api/users/chats/have_read_room', {room_id: this.roomId})
       }
     })
     document.querySelector("#btm").scrollIntoView(true)

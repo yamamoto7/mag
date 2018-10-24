@@ -27,7 +27,6 @@ Rails.application.routes.draw do
 
       resources :likes, only: [:index, :create]
       resources :chats, only: [:index, :show] 
-      put '/chats/have_read_message' => 'chats#have_read_message'
       put '/chats/have_read_room' => 'chats#have_read_room'
     end
     get '/users/get_info' => 'users#get_info'
