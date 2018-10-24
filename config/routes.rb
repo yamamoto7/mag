@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get '/users/chats' => users_route
     get '/users/chats/:id' => users_route
     get '/users/:id' => users_route
+    get '/surveys' => 'home#index'
+    get '/surveys/questions/:id' => 'home#index'
     get '/likes' => users_route
     get '/matchings' => users_route
   end
@@ -31,8 +33,13 @@ Rails.application.routes.draw do
     get '/users/get_info' => 'users#get_info'
     get '/users' => 'users#index'
     get '/users/:id' => 'users#show'
+
+    resources :surveys, only: %i[index], shallow: true do
+      post '/answer' => 'survey_answers#create'
+      get '/questions' => 'survey_questions#index'
+    end
+    get 'survey/questions/:id' => 'survey_questions#show'
+
+    mount ActionCable.server => '/cable'
   end
-
-  mount ActionCable.server => '/cable'
-
 end
