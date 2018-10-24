@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-main{
-  padding-top: 70px;
-  padding-bottom: 90px;
-}
+// FIXME rails ssr でheaderとか表示する際に高さ調整が必要だったが今後これを使う予定がないためいったんこめんと
+//main{
+//  padding-top: 70px;
+//  padding-bottom: 90px;
+//}
