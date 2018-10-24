@@ -1,6 +1,7 @@
 <template>
   <div class='screen main'>
     <main-header show-back-btn="true" show-notification-btn="true"/>
+    <!-- ここでメイン画面読み込む -->
     <main-footer />
   </div>
 </template>
