@@ -1,0 +1,30 @@
+header {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+}
+
+.back-arrow {
+  height: 5vmin;
+  width: 5vmin;
+  border: 0.4vmin solid;
+  border-color: #3f3f3f #3f3f3f transparent transparent;
+  transform: rotate(225deg);
+  position: absolute;
+  left: 5vmin;
+  top: 4.5vmin;
+}
+
+.notification {
+  height: 5vmin;
+  width: 5vmin;
+  border-color: #3f3f3f #3f3f3f transparent transparent;
+  position: absolute;
+  right: 5vmin;
+  top: 4.5vmin;
+}
+
+.logo {
+  margin: 0 auto;
+  line-height: 60px;
+}
