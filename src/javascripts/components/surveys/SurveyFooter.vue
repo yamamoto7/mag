@@ -7,7 +7,7 @@
       >戻る</button>
     </div>
     <div class='bar-container'>
-      <progress-bar :percent="Math.floor( Number(this.question_id)/ 18 * 100)" />
+      <progress-bar :percent="Math.floor( Number(this.$route.params.question_id)/ 18 * 100)" />
     </div>
   </footer>
 </template>
@@ -31,7 +31,9 @@ export default {
       });
     },
   },
-  mounted() {},
+  mounted() {
+    this.question_id = Number(this.$route.params.question_id);
+  },
   components: {
     ProgressBar
   }
