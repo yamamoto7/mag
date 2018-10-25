@@ -27,6 +27,6 @@ class Api::Users::ChatsController < ApplicationController
   def get_room_user_id
     room = ChatRoom.find(params[:room_id])
     user = room.users.where.not(id: current_user.id).first
-    render json: {id: user.id}
+    render json: {id: user.id, first_name: user.first_name, last_name: user.last_name}
   end
 end

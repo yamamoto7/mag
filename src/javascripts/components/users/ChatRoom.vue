@@ -1,5 +1,17 @@
 <template>
   <div id="chat-body">
+    <div class="tabs-box">
+      <div class="tabs">
+        <div class="back">      
+          <span
+            @click="this.ClickBackBtn"
+            class="back-arrow"
+          ></span>
+        </div>
+        <div class="name">{{ userFirst }} {{ userLast }}</div>
+        <div class="bell"></div>
+      </div>
+    </div>
     <div class="list-box">
       <div
           class="message-box"
@@ -40,6 +52,8 @@ data() {
     roomChannel: null,
     user: [],
     userId: '',
+    userFirst: '',
+    userLast: '',
     userImage: ''
   };
 },
@@ -51,6 +65,8 @@ async mounted () {
 
     const userId = await http.get('/api/users/chats/get_room_user_id/' + this.roomId)
     this.userId = await userId.data.id
+    this.userFirst = await userId.data.first_name
+    this.userLast = await userId.data.last_name
 
     const userResponse = await http.get('/api/users/chats/' + this.roomId)
     this.messages = userResponse.data
@@ -81,7 +97,11 @@ methods: {
       this.roomChannel.perform('speak', {message: this.msgBox})
       this.msgBox = ""
     }
-  }
+  },
+  ClickBackBtn () {
+    this.$router.push('/matchings')
+    // this.$router.back();
+  },
 }
 }
 </script>
