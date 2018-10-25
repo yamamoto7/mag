@@ -132,9 +132,9 @@ ActiveRecord::Schema.define(version: 2018_10_24_122538) do
     t.integer "academic"
     t.integer "blood_type"
     t.string "state"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "confimate"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
