@@ -1,13 +1,15 @@
 <template>
   <div>
-    <div class="tabs">
-    <div
-      v-for="page in pages"
-      v-bind:key="page.id"
-      class="tab-item"
-      :active="page.id === current_page"
-      @click.prevent="changePage(page.id)"
-    >{{ page.label }}</div>
+    <div class="tabs-box">
+      <div class="tabs">
+        <div
+          v-for="page in pages"
+          v-bind:key="page.id"
+          class="tab-item"
+          :active="page.id === current_page"
+          @click.prevent="changePage(page.id)"
+        >{{ page.label }}</div>
+      </div>
     </div>
     <div v-show="current_page == 1">1111</div>
     <user-chat-room-list v-show="current_page == 2"></user-chat-room-list>

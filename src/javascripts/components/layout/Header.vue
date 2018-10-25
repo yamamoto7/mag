@@ -1,5 +1,7 @@
 <template>
-  <header>
+  <header
+      v-if="current_page.header"
+  >
     <div
       v-if="current_page.prev"
     >
@@ -12,7 +14,7 @@
       @click='ClickLogo'
       class='logo'
     >
-      Mag
+      Mag{{ current_page.header }}
     </div>
       <i
         class='fa fa-bell fa-lg notification'
@@ -32,35 +34,56 @@ export default {
           path: '/',
           name: 'MainScreen',
           label: 'TOP',
-          prev: false
+          prev: false,
+          header: true
         },
         {
           id: 2,
           path: '/likes',
           name: 'ReceivedLikesList',
           label: 'イイネ一覧',
-          prev: false
+          prev: false,
+          header: true
         },
         {
           id: 3,
           path: '/matchings',
           name: 'MatchingInfo',
           label: 'メッセージリスト',
-          prev: false
+          prev: false,
+          header: true
         },
         {
           id: 4,
           path: '/mypage',
           name: 'UserShowProfile',
           label: 'マイページ',
-          prev: false
+          prev: false,
+          header: true
         },
         {
           id: 5,
           path: '/matchings',
           name: 'UserShowDetail',
           label: 'メッセージリスト',
-          prev: '/'
+          prev: '/',
+          header: true
+        },
+        {
+          id: 6,
+          path: '/matchings',
+          name: 'UserChatRoom',
+          label: 'メッセージリスト',
+          prev: false,
+          header: false
+        },
+        {
+          id: 7,
+          path: '/matchings',
+          name: 'MatchingInfo',
+          label: 'メッセージリスト',
+          prev: false,
+          header: false
         }
       ]
     }

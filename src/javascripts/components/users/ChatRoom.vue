@@ -1,5 +1,17 @@
 <template>
   <div id="chat-body">
+    <div class="tabs-box">
+      <div class="tabs">
+        <div class="back">      
+          <span
+            @click="this.ClickBackBtn"
+            class="back-arrow"
+          ></span>
+        </div>
+        <div class="name">{{ userFirst }} {{ userLast }}</div>
+        <div class="bell"></div>
+      </div>
+    </div>
     <div class="list-box">
       <div
           class="message-box"
@@ -11,7 +23,9 @@
           <div class="read" v-if="message.have_read">既読</div>
           <div class="send">{{ message.submit_time }}</div>
         </div>
-        <div class="prof-image" v-if="message.user_id != user.id"></div>
+        <div class="prof-image" v-if="message.user_id != user.id"
+          :style="'background-image:url(' + userImage + ')'"
+        ></div>
         <div class="message">{{ message.body }}</div>
         <div class="time" v-if="message.user_id != user.id">
           <div class="send">{{ message.submit_time }}</div>
@@ -36,7 +50,11 @@ data() {
     messages: [],
     roomId: this.$route.params.room_id,
     roomChannel: null,
-    user: []
+    user: [],
+    userId: '',
+    userFirst: '',
+    userLast: '',
+    userImage: ''
   };
 },
 async mounted () {
@@ -44,8 +62,23 @@ async mounted () {
     const response = await http.get('/api/users/get_info')
     this.user = response.data
     await http.put('/api/users/chats/have_read_room', {room_id: this.roomId})
+
+    const userId = await http.get('/api/users/chats/get_room_user_id/' + this.roomId)
+    this.userId = await userId.data.id
+    this.userFirst = await userId.data.first_name
+    this.userLast = await userId.data.last_name
+
     const userResponse = await http.get('/api/users/chats/' + this.roomId)
     this.messages = userResponse.data
+
+    const userImage = await http.get('/api/users/images/get_top_image/' + this.userId)
+    this.userImage = userImage.data
+
+    if (userImage.data)
+      this.userImage = userImage.data.profile_image.blob.service_url
+    else
+      this.userImage = 'https://www.derev.com/uploads/crop/400/400/user/avatar/19193ef05fb2112f45763b62792106022bbab573.jpg'
+
     this.roomChannel = await this.$cable.subscriptions.create( {channel: "RoomChannel", room_id: this.roomId, user_id: this.user.id}, {
       received: async (data) => {
         await this.messages.push(data['message'])
@@ -64,7 +97,11 @@ methods: {
       this.roomChannel.perform('speak', {message: this.msgBox})
       this.msgBox = ""
     }
-  }
+  },
+  ClickBackBtn () {
+    this.$router.push('/matchings')
+    // this.$router.back();
+  },
 }
 }
 </script>
