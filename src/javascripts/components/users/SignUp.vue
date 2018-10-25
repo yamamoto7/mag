@@ -89,7 +89,7 @@ export default {
         } else {
           // リダイレクト先指定。
           await this.$router.go()
-          this.$router.push('/')
+          this.$router.push('/save_image')
         }
       } catch (error) {
         // サーバーもしくはネットワークのエラーが返ってきた場合の処理。

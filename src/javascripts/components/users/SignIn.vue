@@ -12,6 +12,7 @@
       :value="user.password"
     /><br>
     <button type="submit" @click="newUserSession">ログイン</button>
+    <a href="/sign_up">登録</a>
   </div>
 </template>
 
