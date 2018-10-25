@@ -1,19 +1,15 @@
 <template>
-  <div class='screen main'>
-    <main-header show-back-btn="true" show-notification-btn="true"/>
-    <!-- ここでメイン画面読み込む -->
-    <main-footer />
+  <div class='main'>
+    <user-list/>
   </div>
 </template>
 
 <script>
-import MainHeader from '../components/layout/Header.vue'
-import MainFooter from '../components/layout/Footer.vue'
+import UserList from '../components/UserList.vue'
 
 export default {
   components: {
-    MainHeader,
-    MainFooter,
+    UserList,
   }
 }
 </script>

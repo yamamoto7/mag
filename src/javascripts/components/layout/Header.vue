@@ -27,7 +27,7 @@ export default {
     return {
     }
   },
-  props: ['showBackBtn', 'showNotificationBtn'],
+  props: ['showbackbtn', 'shownotificationbtn'],
   mounted () {
     console.log(`showBackbtn: ${this.showBackBtn}`);
     console.log(`showNotification: ${this.showNotificationBtn}`)

@@ -1,7 +1,14 @@
 header {
   height: 60px;
+  width: 100vw;
   display: flex;
   flex-direction: row;
+
+  position: fixed;
+  top: 0;
+
+  background-color: whitesmoke;
+
 }
 
 .back-arrow {
