@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_122538) do
     t.integer "birth_year"
     t.integer "birth_month"
     t.integer "birth_date"
-    t.integer "phone_number"
+    t.bigint "phone_number"
     t.integer "tall"
     t.integer "weight_type"
     t.integer "academic"
