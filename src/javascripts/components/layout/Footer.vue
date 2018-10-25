@@ -40,8 +40,8 @@ export default {
         },
         {
           id: 4,
-          path: '/examples',
-          name: 'MyPage',
+          path: '/mypage',
+          name: 'UserShowProfile',
           label: '●',
           badge: false
         }

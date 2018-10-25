@@ -19,4 +19,13 @@ class User < ApplicationRecord
   has_many :chat_messages
 
   has_many :user_images
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :first_kana, presence: true
+  validates :last_kana, presence: true
+  validates :phone_number,    length: { in: 10..11 }
+  validates :birth_year, presence: true
+  validates :birth_month, presence: true
+  validates :birth_date, presence: true
 end
