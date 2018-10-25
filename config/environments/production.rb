@@ -84,6 +84,9 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
+  config.active_storage.service = :local
+  config.default_url_options = { host: "team3.intern.ate.am" }
+  config.action_mailer.default_url_options = { :host => "team3.intern.ate.am" }
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)

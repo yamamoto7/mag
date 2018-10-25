@@ -28,11 +28,14 @@ Rails.application.routes.draw do
       resource :sign_up, only: [:create], controller: :registrations # api/users/sign_up
 
       put '/chats/have_read_room' => 'chats#have_read_room'
+      get '/chats/get_room_user_id/:room_id' => 'chats#get_room_user_id'
       get '/chats/new_message_count' => 'chats#new_message_count'
       get '/chats/get_new_message_count/:room_id' => 'chats#get_new_message_count'
+      get '/images/:user_id' => 'images#index'
+      get '/images/get_top_image/:user_id' => 'images#get_top_image'
       resources :likes, only: [:index, :create]
       resources :chats, only: [:index, :show] 
-      resources :images, only: [:index,:create] 
+      resources :images, only: [:create]
     end
     get '/users/get_info' => 'users#get_info'
     get '/users' => 'users#index'
