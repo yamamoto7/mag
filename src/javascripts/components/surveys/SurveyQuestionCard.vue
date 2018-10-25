@@ -1,52 +1,23 @@
 <template>
-  <div class='question--card'>
-    <h2 class='question--card__title'>
-      {{question.id}}: {{question.title}}
-    </h2>
+  <div class='card'>
+    <p class='question_number'>
+      Q{{question.id}}
+    </p>
 
-    <p class='answer--select__message'>
-      次の選択肢から選んでね :)
+    <p class='title'>
+      {{question.title}}
     </p>
 
     <div class='survey-question--form'>
-      <div
-        class='flex-container flex--row'
-      >
-        <label
-          v-for="(label, index) in this.question_labels"
-          class='survey-question--form__btn'
-        >
-         <input
-          type='radio'
-          name='survey-type'
-          :value='index + 1'
-          @click='updateSurveyAnswer'
-         >
-            {{label}}
-          </input>
-        </label>
-      </div>
-      <button
-        type="submit"
-        @click="submitQuestionForm"
-      >
-        確定する
-      </button>
+      <p class='survey-question--form__btn circle dislike' :value='1' @click='updateSurveyAnswer'/>
+      <p class='survey-question--form__btn circle so dislike' :value='2' @click='updateSurveyAnswer'/>
+      <p class='survey-question--form__btn circle so like' :value='3' @click='updateSurveyAnswer'/>
+      <p class='survey-question--form__btn circle like' :value='4' @click='updateSurveyAnswer'/>
     </div>
 
-    <div>
-      <button
-        @click="ClickBeforeLink"
-        class='before_link_btn'
-      >
-        前へ
-      </button>
-      <button
-        @click="ClickNextLink"
-        class='next_link_btn'
-      >
-        次へ
-      </button>
+    <div class='labels'>
+      <p class='label dislike'>嫌い</p>
+      <p class='label like'>好き</p>
     </div>
   </div>
 </template>
@@ -59,19 +30,10 @@ export default {
     return {
       question_id: Number(this.$route.params.question_id),
       question: {},
-      question_labels: [],
       survey_answer_value: null,
     }
   },
   methods: {
-    ClickNextLink(e){
-      this.$router.push({
-        name: 'SurveyQuestionScreen',
-        params: { question_id: this.question_id += 1 }
-      });
-
-      this.fetchQuestionView();
-    },
     ClickBeforeLink(){
       this.$router.push({
         name: 'SurveyQuestionScreen',
@@ -83,15 +45,6 @@ export default {
     async fetchQuestionView(){
       const res = await http.get(`/api/survey/questions/${this.question_id}`);
       this.question = res.data;
-
-      this.renderQuestion();
-    },
-    renderQuestion() {
-      this.question_labels = [];
-      const text = ['当てはまる', '少し当てはまる', 'あまり当てはまらない', '当てはまらない']
-      for ( let i = 0; i < this.question.question_type; i++){
-        this.question_labels.push(text[i]);
-      }
     },
     async submitQuestionForm() {
       if (!this.survey_answer_value) return;
@@ -102,7 +55,9 @@ export default {
           survey_questions_id: this.question_id
         });
 
-        await this.$router.go()
+        console.log('sample')
+        // 何がしたいんやこいつ
+        // await this.$router.go()
         if (this.question_id !== 18) {
           this.$router.push({
             name: 'SurveyQuestionScreen',
@@ -115,9 +70,11 @@ export default {
       } catch (error) {
         console.log(error)
       }
+      this.fetchQuestionView();
     },
     updateSurveyAnswer (e) {
-      this.survey_answer_value = e.currentTarget.value;
+      this.survey_answer_value = Number(e.currentTarget.getAttributeNode('value').value);
+      this.submitQuestionForm();
     },
   },
   async mounted() {

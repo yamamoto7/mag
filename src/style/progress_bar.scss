@@ -1,0 +1,16 @@
+.container {
+  height: 30px;
+  width: 230px;
+  background-color: lightgrey;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.bar {
+  border-radius: 15px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 10px;
+  color: #fff;
+  background-color: #FFB700;
+}
