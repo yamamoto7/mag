@@ -1,10 +1,16 @@
 <template>
   <div>
-    {{ this.user }}
-    <div v-for="i in this.images">
-      <img :src="i.profile_image.blob.service_url">
+    <div class="image-box">
+      <div
+        class="prof-image"
+        v-for="image in this.images"
+        :style="'background-image:url(' + image.profile_image.blob.service_url + ')'"
+      >
+      </div>
+      <label v-if="this.images.length < 5" for="selector">+
+        <input type="file" id="selector" v-on:change="onSubmit($event.target.files)" accept="image/*" />
+      </label>
     </div>
-    <input type="file" v-on:change="onSubmit($event.target.files)" accept="image/*" />
   </div>
 </template>
 
@@ -21,9 +27,6 @@ export default {
   },
   async mounted () {
     try {
-      // const user_response = await http.get('/api/users/get_info')
-      // const user_id = await user_response.data.id
-      // console.log(user_id)
       const response = await http.get('/api/users/1')
       console.log(response.data)
       this.user = response.data
@@ -49,5 +52,5 @@ export default {
 </script>
 
 <style scoped>
-@import '../../../style/users/chat_room_list.scss'
+@import '../../../style/users/show_profile.scss'
 </style>
