@@ -43,16 +43,16 @@ export default {
     return {
       // フォームなどで送信する亀の情報を保存
       user: {
-        first_name: 'aa',
-        last_name: 'aa',
-        first_kana: 'aa',
-        last_kana: 'aa',
+        first_name: '',
+        last_name: '',
+        first_kana: '',
+        last_kana: '',
         birth_year: '',
         birth_month: '',
         birth_date: '',
-        email: 'a@a',
-        password: 'pppppppp',
-        phone_number: '09092389279'
+        email: '',
+        password: '',
+        phone_number: ''
       },
       days_max: '0',
       errors: []
