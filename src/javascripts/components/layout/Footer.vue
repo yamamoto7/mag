@@ -4,7 +4,7 @@
       v-for="page in pages"
       v-bind:key="page.id"
       class="item"
-      :data-badge="message_count"
+      :data-badge="page.badge"
       :active="page.name === current_page"
       @click.prevent="changePage(page.path, page.name)"
     >{{ page.label }}</div>
@@ -38,7 +38,7 @@ export default {
           path: '/matchings',
           name: 'MatchingInfo',
           label: '✉',
-          badge: 7
+          badge: false
         },
         {
           id: 4,
@@ -55,9 +55,9 @@ export default {
     setInterval(async () => {
       const response = await http.get('/api/users/chats/new_message_count')
       if(response.data.length > 0)
-        this.message_count = response.data.length
+        this.pages[2].badge = response.data.length
       else
-        this.message_count = false
+        this.pages[2].badge = false
     }, 3000)
   },
   methods: {

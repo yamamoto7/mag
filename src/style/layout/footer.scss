@@ -46,8 +46,6 @@ footer div{
 }
 
 .item[data-badge]:before {
-  top: 0;
-  right: 40px;
   transform: translate(50%, -50%);
   content: attr(data-badge)"";
 }

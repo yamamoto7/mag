@@ -31,8 +31,6 @@ export default {
   async mounted () {
     const response = await http.get('/api/users/chats')
     this.rooms = await response.data.rooms
-    console.log(response.data.rooms)
-    console.log(this.rooms)
  },
   methods: {
   }
