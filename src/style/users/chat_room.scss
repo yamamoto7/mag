@@ -25,7 +25,12 @@
   left: 20px;
   top: 20px;
 }
-
+#chat-body{
+  background-color: #fff;
+  padding-top: 30px;
+  padding-bottom: 100px;
+  min-height: 550px
+}
 .list-box{
   width: 340px;
   margin: 0 auto;
@@ -101,6 +106,12 @@
 .input-area{
   text-align: center;
   padding: 10px 0;
+  border-top: 1px solid #eee;
+  position: fixed;
+  bottom: 0;
+  height: 80px;
+  background-color: #fff;
+  width: 100%;
 }
 .input-box{
   border-radius: 15px;

@@ -31,10 +31,10 @@
           <div class="send">{{ message.submit_time }}</div>
         </div>
       </div>
-      <div class="input-area">
-        <input class="input-box" v-model="msgBox" placeholder="message here"></input>
-        <button class="input-btn" @click="speak">送信</button>
-      </div>
+    </div>
+    <div class="input-area">
+      <input class="input-box" v-model="msgBox" placeholder="message here"></input>
+      <button class="input-btn" @click="speak">送信</button>
     </div>
     <div id="btm"></div>
   </div>

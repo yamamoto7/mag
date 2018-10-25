@@ -5,7 +5,7 @@ class Api::Users::ChatsController < ApplicationController
   end
   def show
     # messages = current_user.chat_rooms.find(params[:id]).chat_messages
-    messages = ChatMessage.all
+    messages = ChatRoom.find(params[:id]).chat_messages
     render json: messages
   end
   def have_read_room
