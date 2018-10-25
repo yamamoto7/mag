@@ -8,6 +8,8 @@ import UserShowDetail from '../components/users/ShowDetail.vue'
 import UserChatRoomList from '../components/users/ChatRoomList.vue'
 import UserChatRoom from '../components/users/ChatRoom.vue'
 import UserShowProfile from '../components/users/ShowProfile.vue'
+import SurveyScreen from '../screens/SurveyScreen.vue'
+
 
 Vue.use(Router)
 
@@ -19,6 +21,16 @@ export default new Router({
       path: '/examples',
       name: 'HomeTop',
       component: HomeTop
+    },
+    {
+      path: '/surveys',
+      name: 'SurveyScreen',
+      component: SurveyScreen
+    },
+    {
+      path: '/surveys/questions/:question_id',
+      name: 'SurveyQuestionScreen',
+      component: SurveyScreen
     },
     {
       path: '/',
