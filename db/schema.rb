@@ -132,6 +132,18 @@ ActiveRecord::Schema.define(version: 2018_10_24_122538) do
     t.integer "academic"
     t.integer "blood_type"
     t.string "state"
+    t.string "birth_state"
+    t.string "brother"
+    t.string "martial_status"
+    t.string "childlen"
+    t.string "salary"
+    t.string "job"
+    t.string "job_detail"
+    t.string "academic_status"
+    t.string "holiday"
+    t.string "check_point"
+    t.string "when_meet"
+    t.string "date_cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
