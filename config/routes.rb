@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       resources :chats, only: [:index, :show] 
       resources :images, only: [:index,:create] 
       put '/chats/have_read_room' => 'chats#have_read_room'
+      get '/chats/new_message_count' => 'chats#new_message_count'
       get '/chats/get_new_message_count/:room_id' => 'chats#get_new_message_count'
     end
     get '/users/get_info' => 'users#get_info'
