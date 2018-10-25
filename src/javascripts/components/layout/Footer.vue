@@ -20,7 +20,7 @@ export default {
         {
           id: 1,
           path: '/',
-          name: 'UserList',
+          name: 'MainScreen',
           label: '★',
           badge: false
         },
@@ -53,7 +53,13 @@ export default {
   methods: {
     async changePage (path, name) {
       this.$router.push(path)
-      this.current_page = name
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      if (to.path !== from.path) {
+        this.current_page = this.$route.name
+      }
     }
   },
   components: {

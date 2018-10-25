@@ -7,7 +7,7 @@
       :data-badge="page.badge"
       :active="page.name === current_page"
       @click.prevent="changePage(page.path, page.name)"
-    >{{ page.label }}</div>
+    >{{ page.label }}aaa</div>
   </footer>
 </template>
 
@@ -54,6 +54,14 @@ export default {
     async changePage (path, name) {
       this.$router.push(path)
       this.current_page = name
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      console.log("aaaaaaaaaaaaaaaa")
+      if (to.path !== from.path) {
+        this.current_page = this.$route.name
+      }
     }
   },
   components: {
