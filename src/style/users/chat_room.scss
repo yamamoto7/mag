@@ -1,0 +1,92 @@
+.list-box{
+  width: 340px;
+  margin: 0 auto;
+}
+.message-box{
+  display: flex;
+  margin-top: 20px;
+}
+.message-box[mine]{
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.message-box[mine] .message{
+  float: right;
+  position: relative;
+  padding: 7px 10px;
+  border-radius: 10px;
+  max-width: 170px;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  word-wrap: break-word;
+  text-align: right;
+}
+.message-box[mine] .message:before{
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 100%;
+  border: 8px solid transparent;
+  border-left: 12px solid #e0edff;
+}
+.message-box[others] .message{
+  position: relative;
+  padding: 7px 10px;
+  border-radius: 10px;
+  max-width: 200px;
+  color: #555;
+  font-size: 16px;
+  background: #eee;
+  text-align: right;
+  word-wrap: break-word;
+}
+.message-box[others] .message:before{
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -20px;
+  border: 8px solid transparent;
+  border-right: 12px solid #eee;
+}
+.prof-image{
+  background-image: url('http://livedoor.blogimg.jp/blackmica911/imgs/3/1/31be8196.jpg');
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-size: cover;
+  margin-right: 15px;
+}
+.time{
+  padding: 5px;
+  bottom: 0;
+}
+.send{
+  font-size: 10px;
+}
+.read{
+  font-size: 8px;
+}
+
+.input-area{
+  text-align: center;
+  padding: 10px 0;
+}
+.input-box{
+  border-radius: 5px;
+  border: 0;
+  background-color: #ddd;
+  height: 30px;
+  padding: 0 8px;
+  width: 240px;
+}
+.input-btn{
+  background-color: #00bfff;
+  border: 0;
+  color: #fff;
+  height: 30px;
+  border-radius: 4px;
+  padding: 0 8px;
+}

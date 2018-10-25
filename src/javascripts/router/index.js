@@ -7,7 +7,9 @@ import MatchingInfo from '../components/users/MatchingInfo.vue'
 import UserShowDetail from '../components/users/ShowDetail.vue'
 import UserChatRoomList from '../components/users/ChatRoomList.vue'
 import UserChatRoom from '../components/users/ChatRoom.vue'
+import UserShowProfile from '../components/users/ShowProfile.vue'
 import SurveyScreen from '../screens/SurveyScreen.vue'
+
 
 Vue.use(Router)
 
@@ -59,6 +61,11 @@ export default new Router({
       path: '/users/:user_id',
       name: 'UserShowDetail',
       component: UserShowDetail
+    },
+    {
+      path: '/mypage',
+      name: 'UserShowProfile',
+      component: UserShowProfile
     }
   ]
 })

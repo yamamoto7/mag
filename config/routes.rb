@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get '/surveys/questions/:id' => 'home#index'
     get '/likes' => users_route
     get '/matchings' => users_route
+    get '/mypage' => users_route
   end
 
   # 未ログインの場合のルート
@@ -29,6 +30,9 @@ Rails.application.routes.draw do
 
       resources :likes, only: [:index, :create]
       resources :chats, only: [:index, :show] 
+      resources :images, only: [:index,:create] 
+      put '/chats/have_read_room' => 'chats#have_read_room'
+      get '/chats/get_new_message_count/:room_id' => 'chats#get_new_message_count'
     end
     get '/users/get_info' => 'users#get_info'
     get '/users' => 'users#index'

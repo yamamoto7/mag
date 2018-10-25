@@ -17,4 +17,6 @@ class User < ApplicationRecord
   has_many :surveys, through: :survey_answers
 
   has_many :chat_messages
+
+  has_many :user_images
 end
