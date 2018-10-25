@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     get '/users/get_info' => 'users#get_info'
     get '/users' => 'users#index'
     get '/users/:id' => 'users#show'
+    resource :users, only: [:update]
 
     resources :surveys, only: %i[index], shallow: true do
       post '/answer' => 'survey_answers#create'

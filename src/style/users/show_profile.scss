@@ -50,9 +50,10 @@ label{
   width: 230px;
   background-color: #fff;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 15px;
 }
 .bar-content{
+  border-radius: 15px;
   height: 30px;
   text-align: center;
   line-height: 30px;
@@ -71,6 +72,7 @@ label{
   width: 343px;
   margin: 0 auto;
   border-radius: 8px;
+  margin-bottom: 16px;
 }
 
 .prof-top{
@@ -88,12 +90,13 @@ label{
   font-size: 14px;
 }
 .prof-btm{
-  padding: 16px 0;
+  padding: 8px 0;
 }
 .prof-btm-item{
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding: 8px 0;
 }
 .prof-btm-item div{
   padding-left: 20px;
@@ -105,4 +108,12 @@ label{
 .prof-btm-item div:nth-child(2){
   font-size: 12px;
   width: 60%;
+}
+
+
+.text-form{
+  background-color: #eee;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 4px;
 }
