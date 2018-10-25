@@ -1,8 +1,18 @@
-User.create!(email: 'test1@gmail.com', password: 'pppppppp')
-User.create!(email: 'test2@gmail.com', password: 'pppppppp')
-User.create!(email: 'test3@gmail.com', password: 'pppppppp')
-User.create!(email: 'test4@gmail.com', password: 'pppppppp')
-User.create!(email: 'test5@gmail.com', password: 'pppppppp')
+10.times do |num|
+  User.create!(
+    email: "test#{num}@gmail.com",
+    password: 'pppppppp',
+    sex: [1,2].sample,
+    first_name: "first_#{num}",
+    last_name: "last_#{num}",
+    first_kana: "first_kana#{num}",
+    last_kana: "last_kana#{num}",
+    phone_number: 9876543210,
+    birth_year: [1966, 1977, 1988, 1999].sample,
+    birth_month: 12.times.map{ |m| m + 1 }.sample,
+    birth_date: 29.times.map{ |d| d + 1 }.sample,
+  )
+end
 
 LikesUser.create!(user_id: 1, to_likes_user_id: 2, status: 2)
 LikesUser.create!(user_id: 1, to_likes_user_id: 3, status: 1)
