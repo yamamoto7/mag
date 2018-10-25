@@ -51,8 +51,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.string :state
 
-      t.integer :status
-
       t.timestamps null: false
     end
 

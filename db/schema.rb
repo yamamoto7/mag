@@ -132,7 +132,6 @@ ActiveRecord::Schema.define(version: 2018_10_24_122538) do
     t.integer "academic"
     t.integer "blood_type"
     t.string "state"
-    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
