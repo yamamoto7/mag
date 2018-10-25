@@ -1,7 +1,9 @@
 .image-box{
+  padding-top: 16px;
   display: flex;
   align-items: flex-end;
-  height: 96px;
+  height: 112px;
+  padding-bottom: 16px;
 }
 label{
   display: block;
@@ -19,7 +21,7 @@ label{
   display: none;
 }
 .prof-image{
-  background-image: url('http://livedoor.blogimg.jp/blackmica911/imgs/3/1/31be8196.jpg');
+  background-image: url("http://livedoor.blogimg.jp/blackmica911/imgs/3/1/31be8196.jpg");
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -29,4 +31,78 @@ label{
 .prof-image:nth-child(1){
   width: 80px;
   height: 80px;
+}
+
+.bar-box{
+  background-color: #FFECBB;
+  width: 100%;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.bar-text{
+  font-size: 10px;
+  color: #444;
+}
+.bar{
+  height: 30px;
+  width: 230px;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.bar-content{
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 10px;
+  color: #fff;
+  background-color: #FFB700;
+}
+
+.prof-box{
+  background-color: #EBEBE9;
+  width: 100%;
+  padding: 16px 0;
+}
+.prof-item{
+  background-color: #fff;
+  width: 343px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.prof-top{
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+.prof-top-name{
+  font-size: 16px;
+}
+.prof-top-btn{
+  color: #FFB700;
+  font-size: 14px;
+}
+.prof-btm{
+  padding: 16px 0;
+}
+.prof-btm-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.prof-btm-item div{
+  padding-left: 20px;
+}
+.prof-btm-item div:nth-child(1){
+  font-size: 14px;
+  width: 40%;
+}
+.prof-btm-item div:nth-child(2){
+  font-size: 12px;
+  width: 60%;
 }

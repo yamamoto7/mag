@@ -11,6 +11,26 @@
         <input type="file" id="selector" v-on:change="onSubmit($event.target.files)" accept="image/*" />
       </label>
     </div>
+    <div class="bar-box">
+      <div class="bar-text">プロフィール充実度</div>
+      <div class="bar">
+        <div class="bar-content" style="width: 70%;">70%</div>
+      </div>
+    </div>
+    <div class="prof-box">
+      <div class="prof-item">
+        <div class="prof-top">
+          <div class="prof-top-name">名前</div>
+          <div class="prof-top-btn">編集</div>
+        </div>
+        <div class="prof-btm">
+          <div class="prof-btm-item">
+            <div>身長</div>
+            <div>100cm</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
