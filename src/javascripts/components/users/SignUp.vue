@@ -1,17 +1,36 @@
 <template>
   <div>
     <h2>ユーザー登録</h2>
+    <div>フルネーム</div>
+      {{ this.errors }}
+    <input type="text" v-model="user.first_name" placeholder="姓"/>
+    <input type="text" v-model="user.last_name" placeholder="名"/><br>
+    <input type="text" v-model="user.first_kana" placeholder="セイ"/>
+    <input type="text" v-model="user.last_kana" placeholder="メイ"/><br>
+
+    <select v-model="user.birth_year" @change="get_days">
+      <option v-for="n in 100" :value="n + 1917">
+        {{ n + 1917 }}
+      </option>
+    </select>年
+    <select v-model="user.birth_month" @change="get_days">
+      <option v-for="n in 12" :value="n">
+        {{ n }}
+      </option>
+    </select>月
+    <select v-model="user.birth_date">
+      <option v-for="n in parseInt(days_max, 10)" :value="n">
+        {{ n }}
+      </option>
+    </select>日
 
     <div>メールアドレス</div>
-    <input
-      @input="updateUserEmail"
-      :value="user.email"
-    />
+    {{ this.errors['email'] }}
+    <input v-model="user.email" /><br>
     <div>パスワード</div>
-    <input
-      @input="updateUserPass"
-      :value="user.password"
-    /><br>
+    <input type="password" v-model="user.password" /><br>
+    <div>電話番号</div>
+    <input v-model="user.phone_number" placeholder="入力してください"/><br>
     <button type="submit" @click="submitUser">ユーザー登録</button>
   </div>
 </template>
@@ -24,9 +43,19 @@ export default {
     return {
       // フォームなどで送信する亀の情報を保存
       user: {
-        email: 'yamamoto@gmail.com',
+        first_name: 'aa',
+        last_name: 'aa',
+        first_kana: 'aa',
+        last_kana: 'aa',
+        birth_year: '',
+        birth_month: '',
+        birth_date: '',
+        email: 'a@a',
         password: 'pppppppp',
-      }
+        phone_number: '09092389279'
+      },
+      days_max: '0',
+      errors: []
     }
   },
   mounted () {
@@ -42,11 +71,11 @@ export default {
         // Emailアドレスが既に使われているなど。
         if (response.status === 202) {
           // エラー内容をdataに入れる。
-          this.errors = response.data
+          this.errors = response.data.error
         } else {
           // リダイレクト先指定。
           await this.$router.go()
-          this.$router.push('/users')
+          this.$router.push('/')
         }
       } catch (error) {
         // サーバーもしくはネットワークのエラーが返ってきた場合の処理。
@@ -54,11 +83,8 @@ export default {
       }
     },
     // ---------------------- フォームに入力してある値をdata()にある値に保存するための関数。
-    updateUserEmail (e) {
-      this.user.email = e.target.value
-    },
-    updateUserPass (e) {
-      this.user.password = e.target.value
+    get_days () {
+      this.days_max = new Date(this.user.birth_year, this.user.birth_month, 0).getDate()
     }
   },
   components: {
