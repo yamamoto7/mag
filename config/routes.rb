@@ -8,8 +8,6 @@ Rails.application.routes.draw do
     get '/users/chats' => users_route
     get '/users/chats/:id' => users_route
     get '/users/:id' => users_route
-    get '/surveys' => 'home#index'
-    get '/surveys/questions/:id' => 'home#index'
     get '/surveys' => 'home#survey'
     get '/surveys/questions/:id' => 'home#survey'
     get '/likes' => users_route
