@@ -1,0 +1,21 @@
+footer {
+  position: fixed;
+  bottom: 0px;
+  height: 60px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.before_link_btn {
+  background: #9b9b9b;
+  color: white;
+  font-size: 13px;
+  padding: 6px 13px;
+  border-radius: 20px;
+  margin: 15px;
+}
+
+.bar-container {
+  margin: auto 0;
+}

@@ -5,6 +5,11 @@
         v-bind:survey_title="survey.title"
         v-bind:survey_id="survey.id"
       />
+
+      <survey-footer
+        v-if='Number(this.$route.params.question_id) !== 1'
+      />
+
     </div>
     <div v-else>
       <survey-landing-page />
@@ -15,8 +20,9 @@
 
 <script>
   import http from '../http'
-  import SurveyQuestionList from '../components/surveys/SurveyQuestionList.vue'
   import SurveyLandingPage from '../components/surveys/SurveyLandingPage.vue'
+  import SurveyQuestionList from '../components/surveys/SurveyQuestionList.vue'
+  import SurveyFooter from '../components/surveys/SurveyFooter.vue'
 
   export default {
     data () {
@@ -33,8 +39,9 @@
     methods: {
     },
     components: {
-      SurveyQuestionList,
       SurveyLandingPage,
+      SurveyQuestionList,
+      SurveyFooter,
     }
 }
 </script>
