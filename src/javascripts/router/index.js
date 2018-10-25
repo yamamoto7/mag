@@ -9,6 +9,8 @@ import UserChatRoomList from '../components/users/ChatRoomList.vue'
 import UserChatRoom from '../components/users/ChatRoom.vue'
 import UserShowProfile from '../components/users/ShowProfile.vue'
 import SurveyScreen from '../screens/SurveyScreen.vue'
+import LoginScreen from '../screens/Login.vue'
+import MainScreen from '../screens/main.vue'
 
 
 Vue.use(Router)
@@ -33,9 +35,14 @@ export default new Router({
       component: SurveyScreen
     },
     {
+      path: '/login',
+      name: 'LoginScreen',
+      component: LoginScreen
+    },
+    {
       path: '/',
-      name: 'UserList',
-      component: UserList
+      name: 'MainScreen',
+      component: MainScreen
     },
     {
       path: '/likes',
@@ -62,10 +69,6 @@ export default new Router({
       name: 'UserShowDetail',
       component: UserShowDetail
     },
-    {
-      path: '/mypage',
-      name: 'UserShowProfile',
-      component: UserShowProfile
-    }
   ]
 })
+
