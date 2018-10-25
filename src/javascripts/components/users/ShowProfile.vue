@@ -73,11 +73,14 @@
           </div>
         </div>
       </div>
+      <div class="btn-box">
+        <button class="logout" type="submit" @click="destroyUserSession">ログアウト</button>
+      </div>
     </div>
   </div>
 </template>
 
-<script>
+<script> 
 import http from '../../http'
 
 export default {
@@ -130,6 +133,17 @@ export default {
         await http.put('/api/users', this.user)
       } catch (e) {
         console.log(e)
+      }
+    },
+    async destroyUserSession () {
+      try {
+        await http.delete('/api/users/sign_out')
+        // リダイレクト先指定。
+        await this.$router.go()
+        this.$router.push('/')
+      } catch (error) {
+        // サーバーもしくはネットワークのエラーが返ってきた場合の処理。
+        console.log(error)
       }
     }
   }

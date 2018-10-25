@@ -34,10 +34,7 @@ export default {
     try{
       const response = await http.get('/api/users/chats')
       this.rooms = await response.data.rooms
-        console.log("aa")
-
       for (var i = 0; i < this.rooms.length; i++) {
-        console.log(this.rooms[i].id)
         const userId = await http.get('/api/users/chats/get_room_user_id/' + this.rooms[i].id)
         const userImage = await http.get('/api/users/images/get_top_image/' + userId.data.id)
         if (userImage.data)
