@@ -4,7 +4,7 @@
       v-for="page in pages"
       v-bind:key="page.id"
       class="item"
-      :data-badge="page.badge"
+      :data-badge="message_count"
       :active="page.name === current_page"
       @click.prevent="changePage(page.path, page.name)"
     >{{ page.label }}</div>
@@ -47,14 +47,18 @@ export default {
           label: '●',
           badge: false
         }
-      ]
+      ],
+      message_count: false
     }
   },
   async mounted () {
-    // setInterval(async () => {
+    setInterval(async () => {
       const response = await http.get('/api/users/chats/new_message_count')
-      console.log(response.data)
-    // }, 3000)
+      if(response.data.length > 0)
+        this.message_count = response.data.length
+      else
+        this.message_count = false
+    }, 3000)
   },
   methods: {
     async changePage (path, name) {
