@@ -38,7 +38,7 @@ export default {
           path: '/matchings',
           name: 'MatchingInfo',
           label: '✉',
-          badge: 7
+          badge: false
         },
         {
           id: 4,
@@ -47,14 +47,19 @@ export default {
           label: '●',
           badge: false
         }
-      ]
+      ],
+      message_count: false
     }
   },
   async mounted () {
-    // setInterval(async () => {
+    setInterval(async () => {
       const response = await http.get('/api/users/chats/new_message_count')
       console.log(response.data)
-    // }, 3000)
+      if(response.data.count > 0)
+        this.pages[2].badge = response.data.count
+      else
+        this.pages[2].badge = false
+    }, 3000)
   },
   methods: {
     async changePage (path, name) {

@@ -17,6 +17,10 @@ class Api::Users::LikesController < ApplicationController
       like_create_frag = LikesUser.where(user_id: params[:user_id])
                       .find_by(to_likes_user_id: current_user.id)
                       .update(status: 1)
+      room = ChatRoom.new
+      room.save!
+      room.room_users.create(user_id: current_user.id)
+      room.room_users.create(user_id: params[:user_id])
       render json: like_create_frag
     # 上記以外の場合
     else

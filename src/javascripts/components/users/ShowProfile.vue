@@ -101,11 +101,11 @@ export default {
       let j = 0
       const users = Object.keys(this.user);
       for (i = 0; i < users.length; i++) {
-        if (this.user[users[i]] === null) {
+        if (this.user[users[i]] == null) {
           j++
         }
       }
-      this.count = Math.floor(j*100/i)
+      this.count = 100 - Math.floor(j*100/i)
     } catch (e) {
       console.log(e)
     }
