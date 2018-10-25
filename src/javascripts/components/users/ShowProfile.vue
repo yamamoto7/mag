@@ -14,14 +14,14 @@
     <div class="bar-box">
       <div class="bar-text">プロフィール充実度</div>
       <div class="bar">
-        <div class="bar-content" style="width: 70%;">70%</div>
+        <div class="bar-content" :style="{width: this.count + '%'}">{{ this.count }}%</div>
       </div>
     </div>
     <div class="prof-box">
       <div class="prof-item">
         <div class="prof-top">
           <div class="prof-top-name">{{ user.first_name }}</div>
-          <div class="prof-top-btn" @click="updateUser">編集</div>
+          <div class="prof-top-btn" @click="updateUser">更新</div>
         </div>
         <div class="prof-btm">
           <div class="prof-btm-item">
@@ -71,7 +71,6 @@
               </select>
             </div>
           </div>
-          <div class="prof-top-btn" @click="updateUser">送信</div>
         </div>
       </div>
     </div>
@@ -88,15 +87,30 @@ export default {
       user: '',
       images: '',
       edit: [true, true],
+      count: 0
     }
   },
   async mounted () {
     try {
       const response = await http.get('/api/users/get_info')
-      this.user = response.data
+      this.user = await response.data
         console.log(this.user)
       const get_images = await http.get('/api/users/images')
-      this.images = get_images.data
+      this.images = await get_images.data
+
+      let i = 0
+      let j = 0
+      const users = Object.keys(this.user);
+      for (i = 0; i < users.length; i++) {
+          console.log("a")
+        if (this.user[users[i]] === null) {
+          console.log("a")
+          j++
+        }
+      }
+      this.count = Math.floor(j*100/i)
+      await console.log(this.count)
+
     } catch (e) {
       console.log(e)
     }
