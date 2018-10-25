@@ -13,4 +13,12 @@ class Api::Users::ChatsController < ApplicationController
     messages.update_all(have_read: true)
     render json: messages
   end
+  def new_message_count
+    rooms = current_user.chat_rooms
+    count = 0
+    rooms.each do |r|
+      count += r.get_new_message_count(current_user.id)
+    end
+    render json: {count: count, aa: "aaaa"}
+  end
 end

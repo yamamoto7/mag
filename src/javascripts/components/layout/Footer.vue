@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import http from '../../http'
+
 export default {
   data () {
     return {
@@ -20,7 +22,7 @@ export default {
         {
           id: 1,
           path: '/',
-          name: 'UserList',
+          name: 'MainScreen',
           label: '★',
           badge: false
         },
@@ -48,12 +50,22 @@ export default {
       ]
     }
   },
-  mounted () {
+  async mounted () {
+    // setInterval(async () => {
+      const response = await http.get('/api/users/chats/new_message_count')
+      console.log(response.data)
+    // }, 3000)
   },
   methods: {
     async changePage (path, name) {
       this.$router.push(path)
-      this.current_page = name
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      if (to.path !== from.path) {
+        this.current_page = this.$route.name
+      }
     }
   },
   components: {

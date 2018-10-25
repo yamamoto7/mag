@@ -31,11 +31,13 @@ Rails.application.routes.draw do
       resources :chats, only: [:index, :show] 
       resources :images, only: [:index,:create] 
       put '/chats/have_read_room' => 'chats#have_read_room'
+      get '/chats/new_message_count' => 'chats#new_message_count'
       get '/chats/get_new_message_count/:room_id' => 'chats#get_new_message_count'
     end
     get '/users/get_info' => 'users#get_info'
     get '/users' => 'users#index'
     get '/users/:id' => 'users#show'
+    resource :users, only: [:update]
 
     resources :surveys, only: %i[index], shallow: true do
       post '/answer' => 'survey_answers#create'
