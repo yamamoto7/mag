@@ -26,7 +26,7 @@
     async mounted () {
       // TODO survey_id を動的に初期化するなどする
       const surveyId = 1;
-      const response = await http.get(`/api/surveys?survey_id=${surveyId}`);
+      const response = await http.get(`/api/surveys/${surveyId}/`);
       this.survey = response.data;
     },
     methods: {
@@ -34,7 +34,7 @@
     components: {
       SurveyQuestionList,
     }
-  }
+}
 </script>
 
 <style scoped>

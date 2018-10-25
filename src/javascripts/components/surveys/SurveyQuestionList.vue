@@ -29,7 +29,7 @@
       const q_response = await http.get('/api/surveys/1/questions');
       this.questions = q_response.data;
       const surveyId = 1;
-      const s_response = await http.get(`/api/surveys?survey_id=${surveyId}`);
+      const s_response = await http.get(`/api/surveys/${surveyId}`);
       this.survey = s_response.data;
 
     },

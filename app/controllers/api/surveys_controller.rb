@@ -1,7 +1,7 @@
 class Api::SurveysController < ApplicationController
 
-  def index
-    survey = Survey.find(params[:survey_id])
+  def show
+    survey = Survey.find(params[:id])
     render json: survey
   end
 end
