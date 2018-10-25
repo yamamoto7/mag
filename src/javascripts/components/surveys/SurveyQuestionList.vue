@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class='container'>
     <h3>
-      {{ survey.id }}/{{ survey.title }} ({{survey.active && '実施中' || '未実施'}})
+      {{ survey.title }}
     </h3>
     <div v-if='this.$route.params.question_id'>
       <survey-question-card />
     </div>
-    <div v-else>
-      <button @click='startSurvey'>診断する</button>
-    </div>
+    <footer>
+
+    </footer>
   </div>
 </template>
 
@@ -34,12 +34,14 @@
 
     },
     methods: {
-      startSurvey: function(){
+      ClickBeforeLink(){
         this.$router.push({
           name: 'SurveyQuestionScreen',
-          params: { question_id: this.question_id = 1 }
+          params: { question_id: this.question_id -= 1 }
         });
-      }
+
+        this.fetchQuestionView();
+      },
     },
     components: {
       SurveyQuestionCard

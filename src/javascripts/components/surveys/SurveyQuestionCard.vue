@@ -16,12 +16,12 @@
           v-for="(label, index) in this.question_labels"
           class='survey-question--form__btn'
         >
-         <input
-          type='radio'
-          name='survey-type'
-          :value='index + 1'
-          @click='updateSurveyAnswer'
-         >
+          <input
+            type='radio'
+            name='survey-type'
+            :value='index + 1'
+            @click='updateSurveyAnswer'
+          >
             {{label}}
           </input>
         </label>
@@ -41,12 +41,6 @@
       >
         前へ
       </button>
-      <button
-        @click="ClickNextLink"
-        class='next_link_btn'
-      >
-        次へ
-      </button>
     </div>
   </div>
 </template>
@@ -64,14 +58,6 @@ export default {
     }
   },
   methods: {
-    ClickNextLink(e){
-      this.$router.push({
-        name: 'SurveyQuestionScreen',
-        params: { question_id: this.question_id += 1 }
-      });
-
-      this.fetchQuestionView();
-    },
     ClickBeforeLink(){
       this.$router.push({
         name: 'SurveyQuestionScreen',
