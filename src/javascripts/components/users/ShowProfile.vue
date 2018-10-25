@@ -94,7 +94,6 @@ export default {
     try {
       const response = await http.get('/api/users/get_info')
       this.user = await response.data
-        console.log(this.user)
       const get_images = await http.get('/api/users/images')
       this.images = await get_images.data
 
@@ -102,15 +101,11 @@ export default {
       let j = 0
       const users = Object.keys(this.user);
       for (i = 0; i < users.length; i++) {
-          console.log("a")
         if (this.user[users[i]] === null) {
-          console.log("a")
           j++
         }
       }
       this.count = Math.floor(j*100/i)
-      await console.log(this.count)
-
     } catch (e) {
       console.log(e)
     }
