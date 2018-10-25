@@ -5,6 +5,8 @@ footer {
   width: 100vw;
   display: flex;
   flex-direction: row;
+  z-index: 10;
+  background-color: white;
 }
 
 .before_link_btn {

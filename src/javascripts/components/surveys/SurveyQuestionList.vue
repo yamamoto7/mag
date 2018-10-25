@@ -1,14 +1,15 @@
 <template>
   <div class='container'>
-    <h3>
+    <h3 class='title'>
       {{ survey.title }}
     </h3>
-    <div v-if='this.$route.params.question_id'>
+    <div
+      v-if='this.$route.params.question_id'
+      class='card-wrapper'
+    >
       <survey-question-card />
     </div>
-    <footer>
-
-    </footer>
+    <footer/>
   </div>
 </template>
 
