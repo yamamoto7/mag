@@ -52,7 +52,9 @@ ActiveRecord::Schema.define(version: 2018_10_25_174610) do
 
   create_table "diagnoses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
+    t.string "catchcopy"
     t.text "description"
+    t.integer "sex"
     t.integer "match_id"
   end
 
