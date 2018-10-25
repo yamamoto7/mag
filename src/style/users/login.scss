@@ -1,0 +1,115 @@
+.logo {
+  height: 33%;
+}
+
+.login-container {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+
+.login-container h2 {
+  font-size: 16px;
+}
+
+.login-container input {
+  margin: 0 16px;
+}
+.btn {
+  width: 120px;
+  height: 35px;
+  border-radius: 31.5px;
+  font-size: 18px;
+  line-height: 35px;
+}
+.login-btn {
+  background-color: #00A7E0;
+  color: white;
+}
+
+.register-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.register-btn {
+  background-color: white;
+  color: #00A7E0;
+}
+
+// ====================================
+// https://codepen.io/leogono/pen/EPeVgz?editors=1100
+// ====================================
+
+.custom-form {
+  font-size: 16px;
+  // max-width: 360px;
+  margin: 40px auto 40px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 4px;
+}
+.custom-form .group {
+  position: relative;
+  padding-top: 16px;
+  margin-bottom: 16px;
+}
+.custom-form .group .animated-label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  bottom: 0;
+  z-index: 2;
+  // FXIME サイズ感
+  width: 100%;
+  font-weight: 300;
+  opacity: 0.5;
+  cursor: text;
+  transition: 0.2s ease all;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.custom-form .group .animated-label:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  height: 2px;
+  width: 30px;
+  visibility: hidden;
+  background-color: #0D7BFF;
+  transition: 0.2s ease all;
+}
+.custom-form .group.not-empty .animated-label {
+  top: 0;
+  font-size: 12px;
+}
+.custom-form .group .form-control {
+  position: relative;
+  z-index: 1;
+  border-radius: 0;
+  border-width: 0 0 1px;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  height: auto;
+  padding: 3px 0 5px;
+}
+.custom-form .group .form-control:focus {
+  box-shadow: none;
+  border-bottom-color: rgba(0, 0, 0, 0.12);
+}
+.custom-form .group .form-control:focus ~ .animated-label {
+  top: 0;
+  opacity: 1;
+  color: #0D7BFF;
+  font-size: 12px;
+}
+.custom-form .group .form-control:focus ~ .animated-label:after {
+  visibility: visible;
+  width: 100%;
+  left: 0;
+}

@@ -16,9 +16,8 @@ Rails.application.routes.draw do
   end
 
   # 未ログインの場合のルート
-  root 'users#new_session'
-  get '/sign_up' => 'users#new_registration'
-
+  root 'home#auth'
+  get '/login' => 'home#auth'
 
   devise_for :user, only: []
 
