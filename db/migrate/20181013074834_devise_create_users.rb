@@ -42,7 +42,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :birth_month
       t.integer :birth_date
       # どうせ最初の0いらないからint
-      t.integer :tell
+      t.integer :phone_number
 
       t.integer :tall
       t.integer :weight_type
