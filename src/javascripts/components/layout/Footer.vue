@@ -54,7 +54,6 @@ export default {
   async mounted () {
     setInterval(async () => {
       const response = await http.get('/api/users/chats/new_message_count')
-      console.log(response.data)
       if(response.data.count > 0)
         this.pages[2].badge = response.data.count
       else

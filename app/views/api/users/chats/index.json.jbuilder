@@ -3,7 +3,7 @@ json.set! :rooms do
     json.extract! room, :id
     json.count room.get_new_message_count(current_user.id)
     json.set! :user do
-      json.extract! room.users.where.not(id: current_user.id).first, :id, :email
+      json.extract! room.users.where.not(id: current_user.id).first, :id, :email, :first_name, :last_name
     end
   end
 end
