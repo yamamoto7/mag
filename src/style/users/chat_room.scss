@@ -1,3 +1,31 @@
+.tabs-box{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-top: 20px;
+  background-color: #fac800;
+  color: #fff;
+  z-index: 3;
+}
+.tabs{
+  height: 40px;
+  width: 340px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+}
+.back-arrow {
+  height: 18px;
+  width: 18px;
+  border: 0.4vmin solid;
+  border-color: #fff #fff transparent transparent;
+  transform: rotate(225deg);
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
 .list-box{
   width: 340px;
   margin: 0 auto;
@@ -19,7 +47,7 @@
   max-width: 170px;
   color: #555;
   font-size: 16px;
-  background: #e0edff;
+  background: #ffecbb;
   word-wrap: break-word;
   text-align: right;
 }
@@ -29,7 +57,7 @@
   top: 8px;
   left: 100%;
   border: 8px solid transparent;
-  border-left: 12px solid #e0edff;
+  border-left: 12px solid #ffecbb;
 }
 .message-box[others] .message{
   position: relative;
@@ -75,7 +103,7 @@
   padding: 10px 0;
 }
 .input-box{
-  border-radius: 5px;
+  border-radius: 15px;
   border: 0;
   background-color: #ddd;
   height: 30px;
@@ -83,10 +111,10 @@
   width: 240px;
 }
 .input-btn{
-  background-color: #00bfff;
+  background-color: #ffb700;
   border: 0;
   color: #fff;
   height: 30px;
-  border-radius: 4px;
+  border-radius: 15px;
   padding: 0 8px;
 }
