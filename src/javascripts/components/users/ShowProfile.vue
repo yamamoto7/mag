@@ -42,7 +42,8 @@ export default {
         const data = new FormData()
         data.append('profile_image', e[0])
         await http.post('/api/users/images', data)
-        this.$router.push('/mypage')
+        this.$router.go('/mypage')
+        console.log('aaaa')
       } catch (e) {
         console.log(e)
       }
