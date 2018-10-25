@@ -27,12 +27,12 @@ Rails.application.routes.draw do
       resource :sign_out, only: [:destroy], controller: :sessions # api/users/sign_out
       resource :sign_up, only: [:create], controller: :registrations # api/users/sign_up
 
-      resources :likes, only: [:index, :create]
-      resources :chats, only: [:index, :show] 
-      resources :images, only: [:index,:create] 
       put '/chats/have_read_room' => 'chats#have_read_room'
       get '/chats/new_message_count' => 'chats#new_message_count'
       get '/chats/get_new_message_count/:room_id' => 'chats#get_new_message_count'
+      resources :likes, only: [:index, :create]
+      resources :chats, only: [:index, :show] 
+      resources :images, only: [:index,:create] 
     end
     get '/users/get_info' => 'users#get_info'
     get '/users' => 'users#index'
