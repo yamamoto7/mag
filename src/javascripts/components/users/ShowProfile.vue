@@ -94,7 +94,7 @@ export default {
     try {
       const response = await http.get('/api/users/get_info')
       this.user = await response.data
-      const get_images = await http.get('/api/users/images')
+      const get_images = await http.get('/api/users/images/' + this.user.id)
       this.images = await get_images.data
 
       let i = 0

@@ -30,9 +30,10 @@ Rails.application.routes.draw do
       put '/chats/have_read_room' => 'chats#have_read_room'
       get '/chats/new_message_count' => 'chats#new_message_count'
       get '/chats/get_new_message_count/:room_id' => 'chats#get_new_message_count'
+      get '/images/:user_id' => 'images#index'
       resources :likes, only: [:index, :create]
       resources :chats, only: [:index, :show] 
-      resources :images, only: [:index,:create] 
+      resources :images, only: [:create]
     end
     get '/users/get_info' => 'users#get_info'
     get '/users' => 'users#index'
