@@ -69,6 +69,11 @@ export default new Router({
       name: 'UserShowDetail',
       component: UserShowDetail
     },
+    {
+      path: '/mypage',
+      name: 'UserShowProfile',
+      component: UserShowProfile
+    }
   ]
 })
 
