@@ -5,19 +5,22 @@
       <p class='home--title'>今日の運命の相手かも</p>
       <div class='flex-wrapper'>
         <!-- FIXME -->
-        <fate-card />
-        <fate-card />
-        <fate-card />
-        <fate-card />
+        <fate-card
+          v-for="user_item in fateUsers"
+          v-bind:key="user_item.id"
+          :user="user_item"
+        />
       </div>
       <div class='home-sub-container'>
         <p class='sub-title'>
           あなたと一緒の趣味
         </p>
         <div class="flex-wrapper">
-          <fate-slim-card />
-          <fate-slim-card />
-          <fate-slim-card />
+          <fate-slim-card
+            v-for="user_item in listUsersOne"
+            v-bind:key="user_item.id"
+            :user="user_item"
+          />
         </div>
       </div>
 
@@ -26,9 +29,11 @@
           あなたと同じ職業
         </p>
         <div class="flex-wrapper">
-          <fate-slim-card />
-          <fate-slim-card />
-          <fate-slim-card />
+          <fate-slim-card
+            v-for="user_item in listUsersTwo"
+            v-bind:key="user_item.id"
+            :user="user_item"
+          />
         </div>
       </div>
     </div>
@@ -40,6 +45,7 @@
 import UserList from '../components/UserList.vue'
 import FateCard from '../components/FateCard.vue'
 import FateSlimCard from '../components/FateSlimCard.vue'
+import http from '../http'
 
 export default {
   components: {
@@ -47,7 +53,20 @@ export default {
     FateCard,
     FateSlimCard,
   },
+  data() {
+    return {
+      fateUsers: [],
+      listUsersOne: [],
+      listUsersTwo: [],
+    }
+  },
   async mounted() {
+    const response1 = await http.get('/api/users/rand')
+    this.fateUsers = response1.data
+    const response2 = await http.get('/api/users/rand')
+    this.listUsersOne = response2.data
+    const response3 = await http.get('/api/users/rand')
+    this.listUsersTwo = response3.data
 
   }
 }

@@ -1,16 +1,16 @@
 <template>
   <div class='home--users'>
-    <div class='d-flex flex-row card-container'>
-      <img class='user-img' src="/assets/1_prof.jpg">
+    <div class='d-flex flex-row card-container' @click="jumpPage(user.id)">
+      <img class='user-img' :src="user.image">
       <div class='user-prf'>
-        <p class='mt-1 w-100 name'>あや 愛知</p>
+        <p class='mt-1 w-100 name'>{{ user.first_name }} {{ user.state }}</p>
         <p class='mt-1 w-100 job sub-label'>職業
-          <span class='value'>事務員</span>
+          <span class='value'>{{ user.job }}</span>
         </p>
         <p class='mt-1 w-100 salaly sub-label'>年収
-          <span class='value'>~300</span>
+          <span class='value'>{{ user.salary }}</span>
         </p>
-        <p class='profile'>いい人と出会いたいと考えてます。よろしくお願いします。</p>
+        <p class='profile'>{{ user.profile }}</p>
       </div>
     </div>
   </div>
@@ -25,9 +25,13 @@
       return {
       }
     },
+    props: ['user'],
     async mounted () {
     },
     methods: {
+      async jumpPage (id) {
+        this.$router.push('/users/' + id)
+      }
     },
     components: {
     }
