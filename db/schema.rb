@@ -139,9 +139,8 @@ ActiveRecord::Schema.define(version: 2018_10_25_174610) do
     t.integer "weight_type"
     t.integer "academic"
     t.integer "blood_type"
+    t.integer "diagnoses_id"
     t.text "profile"
-    t.bigint "diagnoses_id"
-
     t.string "state"
     t.string "birth_state"
     t.string "brother"
@@ -157,7 +156,6 @@ ActiveRecord::Schema.define(version: 2018_10_25_174610) do
     t.string "date_cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["diagnoses_id"], name: "index_users_on_diagnoses_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

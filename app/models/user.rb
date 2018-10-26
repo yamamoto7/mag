@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :diagnoses, class_name: 'Diagnosis', foreign_key: :diagnoses_id
+  belongs_to :diagnoses, class_name: 'Diagnosis', optional: true
   has_many :likes_items, class_name: "LikesUser", foreign_key: :user_id
   has_many :likes_users, through: :likes_items
   has_many :liked_items, class_name: "LikesUser", foreign_key: :to_likes_user_id
