@@ -35,8 +35,9 @@ header {
 }
 
 .logo {
-  margin: 0 auto;
-  width: 120px;
-  background-size: cover;
-  background-image: url('/assets/mag.png');
+  margin: 20px auto 0;
+  width: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('/assets/mag1.png');
 }
