@@ -39,6 +39,6 @@
 </script>
 
 <style scoped>
-  @import '../..//style/fate-card.scss'
+  @import '../../style/fate-card.scss'
 </style>
 
