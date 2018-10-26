@@ -1,6 +1,7 @@
 class Api::UsersController < ApplicationController
   def get_info
-    render json: current_user
+    @user = current_user
+    
   end
   def index
     @users = User.all.where.not(sex: current_user.sex)
@@ -9,7 +10,7 @@ class Api::UsersController < ApplicationController
     @users = User.all.where.not(sex: current_user.sex).shuffle.first(10)
   end
   def matching_index
-    @users = current_user.liked_users
+    @rooms = current_user.chat_rooms
   end
   def show
     @user = User.find(params[:id])
