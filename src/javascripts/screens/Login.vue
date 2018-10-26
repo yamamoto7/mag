@@ -1,39 +1,21 @@
 <template>
-  <div>
-    <div class='logo'>
-      <!-- FIXME Withのロゴパクったw https://with.is/welcome -->
-      <!--
-      <img src='http://cdn.with.is/assets/welcome/variety_lp/with_report_photo2-6fea5b8cc98790c2499aa7e963c4234d.png'>
-      -->
-    </div>
+  <div class='screen'>
+    <div class='logo'/>
 
     <div class='login-container'>
-      <h2>
-        ログイン
-      </h2>
-      <div class="custom-form">
-        <div class="group" ng-class="{'not-empty': userName.length}">
-          <input
-            type="text"
-            class="form-control"
-            @input="updateUserEmail"
-            :value="user.email"
-            name='email'
-            id='email'
-          />
-          <label for="email" class="animated-label">メールアドレス</label>
-        </div>
-        <div class="group" ng-class="{'not-empty': passWord.length}">
-            <input
-              type='password'
-              class='form-control'
-              name='pass'
-              id='pass'
-              @input="updateUserPass"
-              :value="user.password"
-            />
-            <label for="pass" class="animated-label">パスワード</label>
-        </div>
+      <div class="form">
+        <input
+          type="text"
+          @input="updateUserEmail"
+          :value="user.email"
+          placeholder="メールアドレス"
+        />
+        <input
+          type='password'
+          @input="updateUserPass"
+          :value="user.password"
+          placeholder="パスワード"
+        />
       </div>
 
       <button
@@ -43,12 +25,10 @@
       >ログイン</button>
     </div>
 
-    <div
-      class='register-container'
-    >
-      <button class='register-btn btn'>
+    <div class='register-footer' >
+      <p class='register-btn btn'>
         新規会員登録
-      </button>
+      </p>
     </div>
   </div>
 </template>

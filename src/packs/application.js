@@ -5,8 +5,7 @@ import router from '../javascripts/router'
 import MainHeader from '../javascripts/components/layout/Header.vue'
 import MainFooter from '../javascripts/components/layout/Footer.vue'
 import MainView from '../javascripts/screens/main.vue';
-import UserSignIn from '../javascripts/components/users/SignIn.vue'
-import UserSignUp from '../javascripts/components/users/SignUp.vue'
+import LoginView from '../javascripts/screens/Login.vue'
 import SurveyScreen from '../javascripts/screens/SurveyScreen.vue'
 
 Vue.prototype.$cable  = ActionCable.createConsumer('ws:localhost:3000/cable')
@@ -17,8 +16,7 @@ new Vue({
     MainView,
     MainHeader,
     MainFooter,
-    UserSignIn,
-    UserSignUp,
+    LoginView,
     SurveyScreen
   },
 }).$mount('#app')
