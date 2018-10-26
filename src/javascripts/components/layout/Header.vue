@@ -96,8 +96,8 @@ export default {
   },
   methods: {
     ClickBackBtn: function(path){
-      this.$router.push(path)
-      // this.$router.back();
+      // this.$router.push(path)
+      this.$router.back()
     },
     CheckNotification: function(){
       // TODO つくる
