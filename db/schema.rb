@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_122538) do
+ActiveRecord::Schema.define(version: 2018_10_25_174610) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(version: 2018_10_24_122538) do
   create_table "chat_rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "diagnoses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.string "catchcopy"
+    t.text "description"
+    t.integer "sex"
+    t.integer "match_id"
   end
 
   create_table "likes_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -132,6 +140,8 @@ ActiveRecord::Schema.define(version: 2018_10_24_122538) do
     t.integer "academic"
     t.integer "blood_type"
     t.text "profile"
+    t.bigint "diagnoses_id"
+
     t.string "state"
     t.string "birth_state"
     t.string "brother"
@@ -147,6 +157,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_122538) do
     t.string "date_cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["diagnoses_id"], name: "index_users_on_diagnoses_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

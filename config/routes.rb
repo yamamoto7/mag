@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     get '/users/chats' => users_route
     get '/users/chats/:id' => users_route
     get '/users/:id' => users_route
-    get '/surveys' => 'home#index'
-    get '/surveys/questions/:id' => 'home#index'
+    get '/surveys' => 'home#survey'
+    get '/surveys/questions/:id' => 'home#survey'
     get '/likes' => users_route
     get '/matchings' => users_route
     get '/mypage' => users_route
@@ -44,7 +44,7 @@ Rails.application.routes.draw do
     get '/users/:id' => 'users#show'
     resource :users, only: [:update]
 
-    resources :surveys, only: %i[index], shallow: true do
+    resources :surveys, only: %i[show], shallow: true do
       post '/answer' => 'survey_answers#create'
       get '/questions' => 'survey_questions#index'
     end

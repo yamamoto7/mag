@@ -8,6 +8,8 @@ import MainView from '../javascripts/screens/main.vue';
 import UserSignIn from '../javascripts/components/users/SignIn.vue'
 import UserSignUp from '../javascripts/components/users/SignUp.vue'
 import UserSaveImage from '../javascripts/components/users/SaveImage.vue'
+import SurveyScreen from '../javascripts/screens/SurveyScreen.vue'
+
 
 Vue.prototype.$cable  = ActionCable.createConsumer('ws:localhost:3000/cable')
 
@@ -19,6 +21,7 @@ new Vue({
     MainFooter,
     UserSignIn,
     UserSignUp,
-    UserSaveImage
+    UserSaveImage,
+    SurveyScreen,
   },
 }).$mount('#app')
