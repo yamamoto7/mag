@@ -1,13 +1,13 @@
 <template>
-  <div class='list'>
+  <div class='list' @click="goRoom">
     <img :src="user.image" alt="" class='user-icon'>
     <div class='content left-content'>
       <p class='name'>{{ user.first_name }}</p>
       <p class='message'>今度一緒にデートしませんか？？？？？？</p>
     </div>
     <div class='content right-content'>
-      <p class='config'></p>
-      <p class='date-time'>16:33</p>
+      <p class='config' :data="badge"></p>
+      <p class='date-time'></p>
     </div>
 
   </div>
@@ -19,10 +19,13 @@
       return {
       }
     },
-    props: ['user'],
+    props: ['user', 'badge', 'room_id'],
     async mounted () {
     },
     methods: {
+      async goRoom () {
+        this.$router.push('/users/chats/' + this.room_id)
+      }
     }
   }
 </script>
