@@ -15,7 +15,7 @@ body {
   //   padding-bottom: 90px;
 }
 
-.fate-wrapper {
+.flex-wrapper {
   overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
@@ -36,4 +36,14 @@ body {
   line-height: normal;
   letter-spacing: normal;
   color: #3f3f3f;
+}
+
+.home-sub-container {
+  margin-top: 10px;
+}
+
+.home-sub-container > .sub-title {
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-bottom: 10px;
 }

@@ -24,6 +24,22 @@
   margin-left: 10px;
 }
 
+.sub-label {
+  font-family: HiraginoSans-W4;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #3f3f3f;
+}
+
+.sub-label > .value {
+  font-size: 14px;
+}
+
 .profile {
   display: block;
   width: 100%;
