@@ -6,10 +6,12 @@
       v-for="page in pages"
       v-bind:key="page.id"
       class="item"
+      :style="'background-image: url(' + (current_page ===  page.image_path ? page.image_path.replace('w_', 'g_') : page.image_path) + ')'"
       :data-badge="page.badge"
       :active="page.name === current_page"
       @click.prevent="changePage(page.path, page.name)"
-    >{{ page.label }}</div>
+    ></div>
+
   </footer>
 </template>
 
@@ -26,6 +28,7 @@ export default {
           path: '/',
           name: 'MainScreen',
           label: '★',
+          image_path: '/assets/w_mag.png',
           badge: false
         },
         {
@@ -33,6 +36,7 @@ export default {
           path: '/suggested',
           name: 'UserSuggestedList',
           label: 'S',
+          image_path: '/assets/w_fate.png',
           badge: false
         },
         {
@@ -40,6 +44,7 @@ export default {
           path: '/likes',
           name: 'ReceivedLikesList',
           label: 'G',
+          image_path: '/assets/w_heart.png',
           badge: false
         },
         {
@@ -47,6 +52,7 @@ export default {
           path: '/matchings',
           name: 'MatchingInfo',
           label: '✉',
+          image_path: '/assets/w_chat.png',
           badge: false
         },
         {
@@ -54,6 +60,7 @@ export default {
           path: '/mypage',
           name: 'UserShowProfile',
           label: '●',
+          image_path: '/assets/w_account.png',
           badge: false
         }
       ],
