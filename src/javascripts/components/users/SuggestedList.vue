@@ -13,7 +13,8 @@
           :style="'background-image:url(' + user_item.image + ')'"
         ></router-link>
         <div class="bottom">
-          <div class="left">{{ user_item.first_name }}</div>
+          <div>{{ user_item.first_name }}</div>
+          <div>{{ user_item.profile }}</div>
         </div>
       </div>
     </div>
