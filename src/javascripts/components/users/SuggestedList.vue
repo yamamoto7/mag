@@ -31,7 +31,7 @@ export default {
   },
   async mounted () {
     try{
-      const response = await http.get('/api/users/likes')
+      const response = await http.get('/api/users')
       this.users = response.data
       for (var i = 0; i < this.users.length; i++) {
         const userImage = await http.get('/api/users/images/get_top_image/' + this.users[i].id)

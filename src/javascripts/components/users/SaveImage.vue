@@ -78,7 +78,7 @@ export default {
       try {
         await http.post('/api/users/images', this.image)
         await this.$router.go()
-        this.$router.push('/')
+        this.$router.push('/surveys')
       } catch (e) {
         console.log(e)
       }

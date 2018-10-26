@@ -8,6 +8,7 @@ import UserShowDetail from '../components/users/ShowDetail.vue'
 import UserChatRoomList from '../components/users/ChatRoomList.vue'
 import UserChatRoom from '../components/users/ChatRoom.vue'
 import UserShowProfile from '../components/users/ShowProfile.vue'
+import UserSuggestedList from '../components/users/SuggestedList.vue'
 import SurveyScreen from '../screens/SurveyScreen.vue'
 import LoginScreen from '../screens/Login.vue'
 import MainScreen from '../screens/main.vue'
@@ -73,6 +74,11 @@ export default new Router({
       path: '/mypage',
       name: 'UserShowProfile',
       component: UserShowProfile
+    },
+    {
+      path: '/suggested',
+      name: 'UserSuggestedList',
+      component: UserSuggestedList
     }
   ]
 })

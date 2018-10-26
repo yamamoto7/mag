@@ -29,6 +29,13 @@ export default {
           badge: false
         },
         {
+          id: 5,
+          path: '/suggested',
+          name: 'UserSuggestedList',
+          label: 'S',
+          badge: false
+        },
+        {
           id: 2,
           path: '/likes',
           name: 'ReceivedLikesList',
