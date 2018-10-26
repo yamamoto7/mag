@@ -20,8 +20,11 @@ class Api::UsersController < ApplicationController
   def user_params
     params.permit(
       :birth_year, :birth_month, :birth_date,
-      :phone_number,
-      :sex, :tall, :weight_type, :academic, :blood_type, :state
+      :phone_number, :profile,
+      :sex, :tall, :weight_type, :academic, :blood_type,
+      :state, :birth_state, :brother, :martial_status, :children,
+      :salary, :job, :job_detail, :academic_status,
+      :holiday, :check_point, :when_meet, :cigarette, :alcohol
       )
   end
 
