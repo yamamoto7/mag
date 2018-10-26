@@ -5,6 +5,9 @@ class Api::UsersController < ApplicationController
   def index
     @users = User.all.where.not(sex: current_user.sex)
   end
+  def rand_index
+    @users = User.all.where.not(sex: current_user.sex).shuffle.first(10)
+  end
   def show
     @user = User.find(params[:id])
     # イイネ済みかどうかを判断して、booleanで持つ
