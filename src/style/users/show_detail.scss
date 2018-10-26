@@ -65,6 +65,8 @@
   border-bottom: solid 1px #dddddd;
   background-color: #ffffff;
   padding-left: 16px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .profile-list-container {
@@ -72,8 +74,8 @@
   line-height: 48px;
 }
 
-.data-type {
-
+.data-value {
+  padding: 0 20px;
 }
 
 footer {
