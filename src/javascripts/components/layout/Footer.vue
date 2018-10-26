@@ -1,6 +1,6 @@
 <template>
   <footer
-    v-if="$route.name !== 'UserChatRoom'"
+    v-if="!['UserChatRoom','UserShowDetail'].includes($route.name)"
   >
     <div
       v-for="page in pages"
