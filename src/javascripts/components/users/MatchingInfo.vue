@@ -11,19 +11,25 @@
         >{{ page.label }}</div>
       </div>
     </div>
-    <div v-show="current_page == 1">1111</div>
+    <div v-show="current_page == 1">
+      <!-- TODO v-for -->
+      <matching-list />
+      <matching-list />
+      <matching-list />
+    </div>
     <user-chat-room-list v-show="current_page == 2"></user-chat-room-list>
   </div>
 </template>
 
 <script>
-import http from '../../http'
 import UserChatRoomList from './ChatRoomList.vue'
+import MatchingList from '../MatchingList.vue'
 
 export default {
   data () {
     return {
-      current_page: 2,
+      // TODO ↓ 2
+      current_page: 1,
       pages: [
         {
           id: 1,
@@ -37,14 +43,15 @@ export default {
     }
   },
   async mounted () {
- },
+  },
   methods: {
     async changePage (id) {
       this.current_page = id
     }
   },
   components: {
-    UserChatRoomList
+    UserChatRoomList,
+    MatchingList,
   }
 }
 </script>

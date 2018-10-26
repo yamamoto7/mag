@@ -1,0 +1,77 @@
+.list {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  border-bottom: solid 1px #dddddd;
+  background-color: white;
+  width: 375px;
+  height: 80px;
+}
+
+.user-icon {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.left-content {
+  margin-left: 15px;
+}
+.right-content {
+
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.name {
+  width: 63px;
+  height: 14px;
+  font-family: HiraginoSans-W4;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3f3f3f;
+}
+
+.message {
+  width: 241px;
+  height: 22px;
+  line-height: 22px;
+  font-family: HiraginoSans-W4;
+  font-size: 11px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #5e5e5e;
+}
+
+.config {
+  background-image: url('/assets/toggle.png');
+  background-repeat:no-repeat;
+  height: 10px;
+}
+
+.date-time {
+  width: 27px;
+  height: 22px;
+  line-height: 22px;«
+  font-family: HiraginoSans-W4;
+  font-size: 9px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #9b9b9b;
+}
