@@ -1,7 +1,7 @@
 <template>
   <div class='home--users'>
     <div class='d-flex flex-row card-container' @click="jumpPage(user.id)">
-      <div class='user-img' :style="'background-image: url(' + user.image + ')'"><div class="rate-box"></div><div class="rate-heart"></div><div class="matching-rate">78%</div></div>
+      <div class='user-img' :style="'background-image: url(' + user.image + ')'"><div class="rate-box"></div><div class="rate-heart"></div><div class="matching-rate">{{ this.rate }}%</div></div>
       <div class='user-prf'>
         <p class='mt-1 w-100 name'>{{ user.first_name }} {{ user.state }}</p>
         <p class='mt-1 w-100 job sub-label'>職業
@@ -23,10 +23,12 @@
   export default {
     data () {
       return {
+        rate: ''
       }
     },
     props: ['user'],
     async mounted () {
+      this.rate = Math.floor( Math.random() * 40 ) + 60
     },
     methods: {
       async jumpPage (id) {

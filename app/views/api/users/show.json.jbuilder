@@ -15,6 +15,6 @@ json.set! :user do
       end
     end
   else
-    json.image 'https://www.derev.com/uploads/crop/400/400/user/avatar/19193ef05fb2112f45763b62792106022bbab573.jpg'
+    json.image '/assets/icon.png'
   end
 end
