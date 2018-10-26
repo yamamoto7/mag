@@ -39,8 +39,11 @@
       </li>
     </ul>
 
-    <p v-if="have_already_liked">イイネ済みです</p>
-    <button v-else @click="submitLike">いいね</button>
+    <footer>
+      <p class='btn sorry'>ごめんね</p>
+      <p v-if="have_already_liked">イイネ済みです</p>
+      <p v-else @click='submitLike' class='btn like'>話したい！</p>
+    </footer>
   </div>
 </template>
 
