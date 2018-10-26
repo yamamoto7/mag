@@ -5,6 +5,7 @@ import router from '../javascripts/router'
 import MainHeader from '../javascripts/components/layout/Header.vue'
 import MainFooter from '../javascripts/components/layout/Footer.vue'
 import MainView from '../javascripts/screens/main.vue';
+import LoginView from '../javascripts/screens/Login.vue'
 import UserSignIn from '../javascripts/components/users/SignIn.vue'
 import UserSignUp from '../javascripts/components/users/SignUp.vue'
 import UserSaveImage from '../javascripts/components/users/SaveImage.vue'
@@ -19,6 +20,7 @@ new Vue({
     MainView,
     MainHeader,
     MainFooter,
+    LoginView,
     UserSignIn,
     UserSignUp,
     UserSaveImage,
