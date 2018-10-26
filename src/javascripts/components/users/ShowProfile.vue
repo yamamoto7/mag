@@ -187,6 +187,7 @@
       </div>
       <div class="btn-box">
         <button class="logout" type="submit" @click="updateUser">更新</button>
+        <button class="logout" type="submit" @click="destroyUserSession">ログアウト</button>
       </div>
     </div>
   </div>
