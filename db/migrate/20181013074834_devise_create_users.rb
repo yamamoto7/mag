@@ -49,7 +49,23 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :academic
       t.integer :blood_type
 
+      t.text :profile
+
       t.string :state
+      t.string :birth_state
+      t.string :brother
+      t.string :martial_status
+      t.string :children
+
+      t.string :salary
+      t.string :job
+      t.string :job_detail
+      t.string :academic_status
+
+      t.string :holiday
+      t.string :check_point
+      t.string :when_meet
+      t.string :date_cost
 
       t.timestamps null: false
     end

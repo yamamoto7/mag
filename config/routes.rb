@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/examples' => 'home#index'
+  get '/sign_up' => 'home#sign_up'
 
   authenticated :user do
     # ログイン済みの場合のルート
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
     get '/likes' => users_route
     get '/matchings' => users_route
     get '/mypage' => users_route
+    get '/save_image' => 'home#save_image'
   end
 
   # 未ログインの場合のルート
