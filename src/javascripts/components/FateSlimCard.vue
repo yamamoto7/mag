@@ -1,7 +1,7 @@
 <template>
   <div class='home-slim-users'>
-    <div class='d-flex flex-row card-slim-container'>
-      <img class='user-slim-img' src="/assets/3_prof.jpg">
+    <div class='d-flex flex-row card-slim-container' @click="jumpPage(user.id)">
+      <img class='user-slim-img' :src="user.image">
     </div>
   </div>
 </template>
@@ -15,9 +15,13 @@
       return {
       }
     },
+    props: ['user'],
     async mounted () {
     },
     methods: {
+      async jumpPage (id) {
+        this.$router.push('/users/' + id)
+      }
     },
     components: {
     }

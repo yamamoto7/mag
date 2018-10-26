@@ -64,9 +64,9 @@ export default {
     setInterval(async () => {
       const response = await http.get('/api/users/chats/new_message_count')
       if(response.data.count > 0)
-        this.pages[2].badge = response.data.count
+        this.pages[3].badge = response.data.count
       else
-        this.pages[2].badge = false
+        this.pages[3].badge = false
     }, 3000)
   },
   methods: {
