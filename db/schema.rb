@@ -139,8 +139,22 @@ ActiveRecord::Schema.define(version: 2018_10_25_174610) do
     t.integer "weight_type"
     t.integer "academic"
     t.integer "blood_type"
+    t.text "profile"
     t.bigint "diagnoses_id"
+
     t.string "state"
+    t.string "birth_state"
+    t.string "brother"
+    t.string "martial_status"
+    t.string "children"
+    t.string "salary"
+    t.string "job"
+    t.string "job_detail"
+    t.string "academic_status"
+    t.string "holiday"
+    t.string "check_point"
+    t.string "when_meet"
+    t.string "date_cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["diagnoses_id"], name: "index_users_on_diagnoses_id"

@@ -1,5 +1,7 @@
 <template>
-  <footer>
+  <footer
+    v-if="$route.name !== 'UserChatRoom'"
+  >
     <div
       v-for="page in pages"
       v-bind:key="page.id"

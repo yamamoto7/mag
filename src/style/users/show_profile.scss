@@ -89,9 +89,6 @@ label{
   color: #FFB700;
   font-size: 14px;
 }
-.prof-btm{
-  padding: 8px 0;
-}
 .prof-btm-item{
   display: flex;
   align-items: center;
@@ -116,6 +113,7 @@ label{
   border: 1px solid #ddd;
   border-radius: 3px;
   padding: 4px;
+  width: 160px;
 }
 
 .btn-box{
@@ -131,4 +129,25 @@ label{
   color: white;
   border-radius: 30px;
 }
+h3{
+  padding: 24px 12px 8px;
+  font-size: 16px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3f3f3f;
+}
 
+.prof-edit{
+  padding-left: 18px;
+}
+
+.prof-text-form{
+  background-color: #eee;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 4px;
+  width: 260px;
+  height: 200px;
+}
