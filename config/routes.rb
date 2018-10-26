@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get '/likes' => users_route
     get '/matchings' => users_route
     get '/mypage' => users_route
+    get '/suggested' => users_route
     get '/save_image' => 'home#save_image'
   end
 

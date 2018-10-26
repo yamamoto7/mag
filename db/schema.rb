@@ -135,10 +135,10 @@ ActiveRecord::Schema.define(version: 2018_10_25_174610) do
     t.integer "birth_month"
     t.integer "birth_date"
     t.bigint "phone_number"
-    t.integer "tall"
-    t.integer "weight_type"
-    t.integer "academic"
-    t.integer "blood_type"
+    t.string "tall"
+    t.string "weight_type"
+    t.string "academic"
+    t.string "blood_type"
     t.integer "diagnoses_id"
     t.text "profile"
     t.string "state"
@@ -153,7 +153,8 @@ ActiveRecord::Schema.define(version: 2018_10_25_174610) do
     t.string "holiday"
     t.string "check_point"
     t.string "when_meet"
-    t.string "date_cost"
+    t.string "cigarette"
+    t.string "alcohol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

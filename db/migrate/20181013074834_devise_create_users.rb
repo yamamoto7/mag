@@ -44,10 +44,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # どうせ最初の0いらないからint
       t.integer :phone_number, limit: 8
 
-      t.integer :tall
-      t.integer :weight_type
-      t.integer :academic
-      t.integer :blood_type
+      t.string :tall
+      t.string :weight_type
+      t.string :academic
+      t.string :blood_type
 
       t.text :profile
 
@@ -65,7 +65,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :holiday
       t.string :check_point
       t.string :when_meet
-      t.string :date_cost
+      t.string :cigarette
+      t.string :alcohol
 
       t.timestamps null: false
     end
