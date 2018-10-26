@@ -153,7 +153,8 @@ ActiveRecord::Schema.define(version: 2018_10_25_174610) do
     t.string "holiday"
     t.string "check_point"
     t.string "when_meet"
-    t.string "date_cost"
+    t.string "cigarette"
+    t.string "alcohol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
