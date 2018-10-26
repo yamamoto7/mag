@@ -11,7 +11,7 @@
         <div
           class="prof-image"
           v-for="image in this.images"
-          :style="'background-image:url(' + image.profile_image.blob.service_url + ')'"
+          :style="'background-image:url(' + image.url + ')'"
         >
         </div>
         <label v-if="this.images.length < 5" for="selector">+
@@ -211,6 +211,7 @@ export default {
       this.user = await response.data
       const get_images = await http.get('/api/users/images/' + this.user.id)
       this.images = await get_images.data
+      console.log(this.images)
 
       let i = 0
       let j = 0
