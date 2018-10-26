@@ -14,7 +14,6 @@
       @click='ClickLogo'
       class='logo'
     >
-      Mag{{ current_page.header }}
     </div>
       <i
         class='fa fa-bell fa-lg notification'

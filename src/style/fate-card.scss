@@ -1,0 +1,53 @@
+.home--users {
+  /* 横スクロール用 */
+  display: inline-block;
+  width: 340px;
+  height: 159.6px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 10px;
+  background-color: #fff;
+  filter: drop-shadow(0px 0px 3px rgba(0,0,0,.2));
+}
+
+.card-container {
+  width: 80vw;
+  height: 159.6px;
+}
+
+.user-img {
+  width: 50%;
+}
+
+.user-prf {
+  width: 50%;
+  margin-left: 10px;
+}
+
+.sub-label {
+  font-family: HiraginoSans-W4;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #3f3f3f;
+}
+
+.sub-label > .value {
+  font-size: 14px;
+}
+
+.profile {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  white-space:pre-wrap;
+}
+
+.d-flex { display: flex; }
+.flex-row { flex-direction: row; }
+.mt-1 { margin-top: 10px; }
+.w-100 { width: 50%; }
