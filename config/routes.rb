@@ -42,6 +42,7 @@ Rails.application.routes.draw do
     get '/users/get_info' => 'users#get_info'
     get '/users' => 'users#index'
     get '/users/rand' => 'users#rand_index'
+    get '/users/matching' => 'users#matching_index'
     get '/users/:id' => 'users#show'
     resource :users, only: [:update]
 
