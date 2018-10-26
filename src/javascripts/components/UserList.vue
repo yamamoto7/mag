@@ -8,8 +8,8 @@
       >
         <router-link class="top-image" :to="{ name: 'UserShowDetail', params: { user_id: user_item.id }}"></router-link>
         <div class="bottom">
-          <div class="left">あや(24)</div>
-          <div class="right">▶</div>
+          <div class="left">{{ user_item.first_name }}</div>
+          <div class="right"></div>
         </div>
       </div>
     </div>

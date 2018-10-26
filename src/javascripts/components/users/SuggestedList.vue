@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>相手からの話したい！</h2>
+    <h2>今までの運命の相手かも</h2>
     <div class="box-wrapper">
       <div
         class="box"
@@ -13,7 +13,7 @@
           :style="'background-image:url(' + user_item.image + ')'"
         ></router-link>
         <div class="bottom">
-          <div class="left">あや(24)</div>
+          <div class="left">{{ user_item.first_name }}</div>
         </div>
       </div>
     </div>
