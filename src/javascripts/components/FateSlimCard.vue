@@ -2,7 +2,7 @@
   <div class='home-slim-users'>
     <div class='d-flex flex-row card-slim-container' @click="jumpPage(user.id)">
       <div class='user-slim-img' :style="'background-image: url(' + user.image + ')'">
-        <div class="rate-box"></div><div class="rate-heart"></div><div class="matching-rate">{{ this.rate }}%  {{ user.first_name }}</div>
+        <div class="rate-box"></div><div class="rate-heart"></div><div class="matching-rate">{{ this.rate }}%</div>
       </div>
     </div>
   </div>
