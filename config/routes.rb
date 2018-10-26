@@ -34,7 +34,6 @@ Rails.application.routes.draw do
       get '/chats/new_message_count' => 'chats#new_message_count'
       get '/chats/get_new_message_count/:room_id' => 'chats#get_new_message_count'
       get '/images/:user_id' => 'images#index'
-      get '/images/get_top_image/:user_id' => 'images#get_top_image'
       resources :likes, only: [:index, :create]
       resources :chats, only: [:index, :show] 
       resources :images, only: [:create]
