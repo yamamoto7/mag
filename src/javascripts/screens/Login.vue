@@ -26,7 +26,7 @@
     </div>
 
     <div class='register-footer' >
-      <p class='register-btn btn'>
+      <p class='register-btn btn' @click='RegisterBtn'>
         新規会員登録
       </p>
     </div>
@@ -67,6 +67,11 @@
           // サーバーもしくはネットワークのエラーが返ってきた場合の処理。
           console.log(error)
         }
+      },
+      RegisterBtn: function(){
+        // FIXME Router使って
+        // this.$router.push('/sign_up');
+        window.location.pathname = '/sign_up';
       }
     }
   }
