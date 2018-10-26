@@ -17,7 +17,7 @@ class Api::Users::RegistrationsController < ApplicationController
       :email, :password,
       :first_name, :last_name, :first_kana, :last_kana,
       :birth_year, :birth_month, :birth_date,
-      :phone_number
+      :phone_number, :sex
       )
   end
 end
