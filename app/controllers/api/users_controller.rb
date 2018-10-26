@@ -3,7 +3,7 @@ class Api::UsersController < ApplicationController
     render json: current_user
   end
   def index
-    render json: User.all.where.not(sex: current_user.sex)
+    @users = User.all.where.not(sex: current_user.sex)
   end
   def show
     @user = User.find(params[:id])
