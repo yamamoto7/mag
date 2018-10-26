@@ -6,7 +6,7 @@
     >
       <router-link class="room-item" :to="{ name: 'UserChatRoom', params: { room_id: room_item.id }}">
         <div class="image"
-          :style="'background-image:url(' + room_item.user.email + ')'"
+          :style="'background-image:url(' + room_item.user.image + ')'"
         ></div>
         <div class="text">
           <div class="user-name">{{ room_item.user.first_name }} {{ room_item.user.last_name }}</div>
@@ -34,15 +34,6 @@ export default {
     try{
       const response = await http.get('/api/users/chats')
       this.rooms = await response.data.rooms
-      for (var i = 0; i < this.rooms.length; i++) {
-        const userId = await http.get('/api/users/chats/get_room_user_id/' + this.rooms[i].id)
-        const userImage = await http.get('/api/users/images/get_top_image/' + userId.data.id)
-        if (userImage.data)
-          this.rooms[i].user.email = userImage.data.profile_image.blob.service_url
-        else
-          this.rooms[i].user.email = 'https://www.derev.com/uploads/crop/400/400/user/avatar/19193ef05fb2112f45763b62792106022bbab573.jpg'
-      }
-
     } catch(e) {
       console.log(e)
     }

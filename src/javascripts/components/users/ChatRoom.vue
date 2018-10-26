@@ -63,21 +63,14 @@ async mounted () {
     this.user = response.data
     await http.put('/api/users/chats/have_read_room', {room_id: this.roomId})
 
-    const userId = await http.get('/api/users/chats/get_room_user_id/' + this.roomId)
+    const userId = await http.get('/api/users/chats/get_room_user/' + this.roomId)
+    this.userImage = await userId.data.image
     this.userId = await userId.data.id
     this.userFirst = await userId.data.first_name
     this.userLast = await userId.data.last_name
 
     const userResponse = await http.get('/api/users/chats/' + this.roomId)
     this.messages = userResponse.data
-
-    const userImage = await http.get('/api/users/images/get_top_image/' + this.userId)
-    this.userImage = userImage.data
-
-    if (userImage.data)
-      this.userImage = userImage.data.profile_image.blob.service_url
-    else
-      this.userImage = 'https://www.derev.com/uploads/crop/400/400/user/avatar/19193ef05fb2112f45763b62792106022bbab573.jpg'
 
     this.roomChannel = await this.$cable.subscriptions.create( {channel: "RoomChannel", room_id: this.roomId, user_id: this.user.id}, {
       received: async (data) => {

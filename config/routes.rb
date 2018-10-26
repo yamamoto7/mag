@@ -30,7 +30,7 @@ Rails.application.routes.draw do
       resource :sign_up, only: [:create], controller: :registrations # api/users/sign_up
 
       put '/chats/have_read_room' => 'chats#have_read_room'
-      get '/chats/get_room_user_id/:room_id' => 'chats#get_room_user_id'
+      get '/chats/get_room_user/:room_id' => 'chats#get_room_user'
       get '/chats/new_message_count' => 'chats#new_message_count'
       get '/chats/get_new_message_count/:room_id' => 'chats#get_new_message_count'
       get '/images/:user_id' => 'images#index'
