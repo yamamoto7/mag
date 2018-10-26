@@ -54,11 +54,19 @@
   letter-spacing: normal;
   color: #5e5e5e;
 }
-
+.config[data]:before{
+  display: block;
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: red;
+  content: attr(data)"";
+}
 .config {
-  background-image: url('/assets/toggle.png');
-  background-repeat:no-repeat;
-  height: 10px;
+  // background-image: url('/assets/toggle.png');
+  // background-repeat:no-repeat;
+  // height: 10px;
 }
 
 .date-time {

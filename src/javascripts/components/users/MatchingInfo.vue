@@ -11,14 +11,17 @@
         >{{ page.label }}</div>
       </div>
     </div>
-    <div v-show="current_page == 1">
+    <div v-show="current_page == 2">
       <!-- TODO v-for -->
       <matching-list
-          v-for="user in users"
-          :user="user"
+          v-for="room in rooms"
+          :user="room.user"
+          :badge="room.count"
+          :key="room.id"
+          :room_id="room.id"
       />
     </div>
-    <user-chat-room-list v-show="current_page == 2"></user-chat-room-list>
+    <user-chat-room-list v-show="current_page == 1"></user-chat-room-list>
   </div>
 </template>
 
@@ -42,12 +45,13 @@ export default {
           label: 'メッセージ'
         }
       ],
-      users: []
+      users: [],
+      rooms: []
     }
   },
   async mounted () {
-    const response = await http.get('/api/users/matching')
-    this.users = response.data
+    const response = await http.get('/api/users/chats')
+    this.rooms = await response.data.rooms
     console.log(response.data)
   },
   methods: {

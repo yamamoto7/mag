@@ -1,23 +1,18 @@
 <template>
-  <div>
-    <div
-      v-for="room_item in rooms"
-      v-bind:key="room_item.id"
+  <div class="wrap">
+    <div class='home-slim-users'
+      v-for="user in this.users"
+      @click="goShow(user.id)"
     >
-      <router-link class="room-item" :to="{ name: 'UserChatRoom', params: { room_id: room_item.id }}">
-        <div class="image"
-          :style="'background-image:url(' + room_item.user.image + ')'"
-        ></div>
-        <div class="text">
-          <div class="user-name">{{ room_item.user.first_name }} {{ room_item.user.last_name }}</div>
-          <div class="user-message"></div>
+      <div class='d-flex flex-row card-slim-container'>
+        <div class='user-slim-img' :style="'background-image: url(' + user.image + ')'">
+          <div class="rate-box"></div>
+          <div class="matching-rate">{{ user.first_name }}</div>
         </div>
-        <div class="info">
-          <div class="time">12:12</div>
-          <div class="badge" :data="room_item.count"></div>
         </div>
-      </router-link>
+      </div>
     </div>
+
   </div>
 </template>
 
@@ -27,18 +22,21 @@ import http from '../../http'
 export default {
   data () {
     return {
-      rooms: [],
+      users: [],
     }
   },
   async mounted () {
     try{
-      const response = await http.get('/api/users/chats')
-      this.rooms = await response.data.rooms
+      const response = await http.get('/api/users/matching')
+      this.users = await response.data
     } catch(e) {
       console.log(e)
     }
  },
   methods: {
+    async goShow (id) {
+      this.$router.push('/users/' + id)
+    }
   }
 }
 </script>
