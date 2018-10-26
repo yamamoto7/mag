@@ -55,9 +55,8 @@ export default {
           survey_questions_id: this.question_id
         });
 
-        console.log('sample')
         // 何がしたいんやこいつ
-        // await this.$router.go()
+        await this.$router.go();
         if (this.question_id !== 18) {
           this.$router.push({
             name: 'SurveyQuestionScreen',
@@ -66,6 +65,8 @@ export default {
         } else {
           // TODO 最後の設問の時だけ別のところに飛ばす
           this.$router.push('/')
+          window.reload(); // FXIME ごめんなさい。なんかリダイレクトがうまく行かなかったんです。
+          return; // 74の処理はしたくないから return;
         }
       } catch (error) {
         console.log(error)
