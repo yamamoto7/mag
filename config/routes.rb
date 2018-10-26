@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get '/users/:id' => users_route
     get '/surveys' => 'home#survey'
     get '/surveys/questions/:id' => 'home#survey'
+    get '/surveys/result' => 'home#survey_result'
     get '/likes' => users_route
     get '/matchings' => users_route
     get '/mypage' => users_route

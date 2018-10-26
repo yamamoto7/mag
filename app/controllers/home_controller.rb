@@ -7,6 +7,7 @@ class HomeController < ApplicationController
   def sign_up; end
   def auth; end
   def survey; end
+  def survey_result; end
 
   private
   def redirect_root

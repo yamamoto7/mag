@@ -64,7 +64,7 @@ export default {
           });
         } else {
           // TODO 最後の設問の時だけ別のところに飛ばす
-          this.$router.push('/')
+          this.$router.push('/survey/result');
           window.reload(); // FXIME ごめんなさい。なんかリダイレクトがうまく行かなかったんです。
           return; // 74の処理はしたくないから return;
         }
