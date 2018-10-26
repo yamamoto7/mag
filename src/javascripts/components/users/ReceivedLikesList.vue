@@ -13,7 +13,8 @@
           :style="'background-image:url(' + user_item.image + ')'"
         ></router-link>
         <div class="bottom">
-          <div class="left">あや(24)</div>
+          <div>{{ user_item.first_name }}</div>
+          <div>{{ user_item.profile }}</div>
         </div>
       </div>
     </div>

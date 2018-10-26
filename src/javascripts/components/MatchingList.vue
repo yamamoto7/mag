@@ -1,8 +1,8 @@
 <template>
   <div class='list'>
-    <img src="/assets/saitoasuka.jpg" alt="" class='user-icon'>
+    <img :src="user.image" alt="" class='user-icon'>
     <div class='content left-content'>
-      <p class='name'>あや</p>
+      <p class='name'>{{ user.first_name }}</p>
       <p class='message'>今度一緒にデートしませんか？？？？？？</p>
     </div>
     <div class='content right-content'>
@@ -17,9 +17,9 @@
   export default {
     data () {
       return {
-        rooms: [],
       }
     },
+    props: ['user'],
     async mounted () {
     },
     methods: {

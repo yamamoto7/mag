@@ -1,29 +1,25 @@
 <template>
   <div>
-    <h2>相手からの話したい！</h2>
+    <h2>今までの運命の相手かも</h2>
     <div class="box-wrapper">
-      <div
-        class="box"
+      <fate-history-card
+        style="margin-bottom: 15px;"
         v-for="user_item in users"
         v-bind:key="user_item.id"
-      >
-        <router-link
-          class="top-image"
-          :to="{ name: 'UserShowDetail', params: { user_id: user_item.id }}"
-          :style="'background-image:url(' + user_item.image + ')'"
-        ></router-link>
-        <div class="bottom">
-          <div class="left">あや(24)</div>
-        </div>
-      </div>
+        :user="user_item"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import FateHistoryCard from '../FateHistoryCard.vue'
 import http from '../../http'
 
 export default {
+  components: {
+    FateHistoryCard
+  },
   data () {
     return {
       users: []
