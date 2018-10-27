@@ -5,8 +5,10 @@ class Api::SurveyAnswersController < ApplicationController
 
     # FIXME エラー処理
     current_user.survey_answers.create!(survey_answer_params)
-    # FIXME 選択項目から類推
-    current_user.update!(diagnoses_id: Diagnosis.all.count.sample)
+    if survey_answer_params[:survey_questions_id] == 18
+      # FIXME 選択項目から類推
+      current_user.update!(diagnoses_id: Diagnosis.all.sample.id)
+    end
 
     render_success
   end
