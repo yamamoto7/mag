@@ -5,18 +5,18 @@
       <div class="box">
         <div class="box-good">good!</div>
         <div class="image-box">
-          <div class="image-item"></div>
-          <div class="image-item"></div>
-          <div class="image-item"></div>
+          <div class="image-item a1"></div>
+          <div class="image-item a2"></div>
+          <div class="image-item a3"></div>
         </div>
         <div class="box-text">・顔がはっきりとわかる<br>・清潔感がある</div>
       </div>
       <div class="box">
         <div class="box-bad">bad</div>
         <div class="image-box">
-          <div class="image-item"></div>
-          <div class="image-item"></div>
-          <div class="image-item"></div>
+          <div class="image-item n1"></div>
+          <div class="image-item n2"></div>
+          <div class="image-item n3"></div>
         </div>
         <div class="box-text">・顔が隠れている<br>・顔が映っていない<br>・写真がぼやけている</div>
       </div>

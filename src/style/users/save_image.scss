@@ -59,10 +59,12 @@ h2 {
   justify-content: space-between;
   align-items: center;
 }
+
 .image-item {
   width: 80px;
   height: 80px;
-  background-color: blue;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .box-text{
@@ -123,3 +125,13 @@ h2 {
   border-radius: 8px;
   background-size: cover;
 }
+
+.a1 {
+  background-image: url('/assets/accept1.png');
+}
+.a2 { background-image: url('/assets/accept2.png') }
+.a3 { background-image: url('/assets/accept3.png') }
+
+.n1 { background-image: url('/assets/NG1.png') }
+.n2 { background-image: url('/assets/NG2.png') }
+.n3 { background-image: url('/assets/NG3.png') }
