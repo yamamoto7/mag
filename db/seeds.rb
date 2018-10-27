@@ -1,32 +1,3 @@
-10.times do |num|
-  User.create!(
-    email: "test#{num}@gmail.com",
-    password: 'pppppppp',
-    sex: [1,2].sample,
-    first_name: "first_#{num}",
-    last_name: "last_#{num}",
-    first_kana: "first_kana#{num}",
-    last_kana: "last_kana#{num}",
-    phone_number: 9876543210,
-    birth_year: [1966, 1977, 1988, 1999].sample,
-    birth_month: 12.times.map{ |m| m + 1 }.sample,
-    birth_date: 29.times.map{ |d| d + 1 }.sample,
-  )
-end
-
-LikesUser.create!(user_id: 1, to_likes_user_id: 2, status: 2)
-LikesUser.create!(user_id: 1, to_likes_user_id: 3, status: 1)
-LikesUser.create!(user_id: 1, to_likes_user_id: 4, status: 0)
-LikesUser.create!(user_id: 2, to_likes_user_id: 3, status: 0)
-LikesUser.create!(user_id: 3, to_likes_user_id: 1, status: 1)
-LikesUser.create!(user_id: 3, to_likes_user_id: 4, status: 1)
-LikesUser.create!(user_id: 4, to_likes_user_id: 3, status: 1)
-
-ChatRoom.create!()
-
-RoomUser.create!(user_id: 1, chat_room_id: 1)
-RoomUser.create!(user_id: 3, chat_room_id: 1)
-
 Survey.all.map { |s| s.destroy! }
 Survey.create!(title: '価値観診断', active: true)
 survey = Survey.first
@@ -90,3 +61,54 @@ diagnoses.each do |str|
     match_id: Random.rand(13) + 1,
   )
 end
+User.create!(email: "20@m",password: 'pppppppp',sex: 2,first_name: "市川",last_name: "ひなた",first_kana: "ヤナセ",last_kana: "ミク",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 11,birth_date: 19,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "小柄",academic: "大学",blood_type: "B型",state: "岐阜県",birth_state: "三重県",brother: "長女",martial_status: "なし",children: "いない",salary: "~200万",job: "学生",job_detail: "大学生",academic_status: "在学",holiday: "土日",check_point: "写真",when_meet: "気が合えば会いたい",cigarette: "吸わない",alcohol: "飲まない")
+User.create!(email: "4@m",password: 'pppppppp',sex: 2,first_name: "真理子",last_name: "阿部",first_kana: "マリコ",last_kana: "アベ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 11,birth_date: 15,profile: "女子大で出会いがなかったので初めて見ました。",diagnoses_id: 1,tall: 157,weight_type: "ふつう",academic: "大学",blood_type: "A型",state: "愛知県",birth_state: "三重県",brother: "長女",martial_status: "なし",children: "いない",salary: "~200万",job: "学生",job_detail: "大学3年生",academic_status: "在学",holiday: "平日",check_point: "プロフィールの充実度",when_meet: "まずは会いたい",cigarette: "吸わない",alcohol: "時々")
+User.create!(email: "15@m",password: 'pppppppp',sex: 2,first_name: "ひとみ",last_name: "古谷",first_kana: "ヒトミ",last_kana: "フルヤ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 10,birth_date: 3,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "小柄",academic: "大学",blood_type: "O型",state: "大阪府",birth_state: "岐阜県",brother: "長女",martial_status: "なし",children: "いない",salary: "~200万",job: "学生",job_detail: "女子大",academic_status: "在学",holiday: "土日",check_point: "その他",when_meet: "メッセージをしっかり重ねてから",cigarette: "吸わない",alcohol: "飲まない")
+User.create!(email: "16@m",password: 'pppppppp',sex: 2,first_name: "優美",last_name: "大沢",first_kana: "ユウミ",last_kana: "オオサワ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 11,birth_date: 26,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "ふっくら",academic: "大学",blood_type: "B型",state: "大阪府",birth_state: "愛知県",brother: "長女",martial_status: "なし",children: "いない",salary: "~200万",job: "パート",job_detail: "コンビニ",academic_status: "卒業",holiday: "土日",check_point: "写真",when_meet: "メッセージをしっかり重ねてから",cigarette: "吸わない",alcohol: "飲まない")
+User.create!(email: "1@m",password: 'pppppppp',sex: 2,first_name: "みはる",last_name: "角田",first_kana: "ミハル",last_kana: "ツノダ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 3,birth_date: 21,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "ふつう",academic: "大学",blood_type: "A型",state: "愛知県",birth_state: "三重県",brother: "次女",martial_status: "なし",children: "いない",salary: "200~300万",job: "保育士",job_detail: "",academic_status: "卒業",holiday: "その他",check_point: "プロフィールの充実度",when_meet: "気が合えば会いたい",cigarette: "時々",alcohol: "飲む")
+User.create!(email: "13@m",password: 'pppppppp',sex: 2,first_name: "ゆき",last_name: "名瀬川",first_kana: "ユキ",last_kana: "ハセガワ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 5,birth_date: 2,profile: "大学2年だよ、大学生の人探しています。よろしくお願いします",diagnoses_id: 1,tall: 157,weight_type: "太め",academic: "大学",blood_type: "AB型",state: "三重県",birth_state: "三重県",brother: "次女",martial_status: "なし",children: "いない",salary: "~200万",job: "学生",job_detail: "3年生",academic_status: "在学",holiday: "平日",check_point: "価値観",when_meet: "気が合えば会いたい",cigarette: "吸わない",alcohol: "時々")
+User.create!(email: "11@m",password: 'pppppppp',sex: 2,first_name: "あや",last_name: "中島",first_kana: "アヤ",last_kana: "ナカジマ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 4,birth_date: 14,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "太め",academic: "大学",blood_type: "AB型",state: "静岡県",birth_state: "岐阜県",brother: "次女",martial_status: "なし",children: "いない",salary: "200~300万",job: "保育士",job_detail: "",academic_status: "卒業",holiday: "不定期",check_point: "価値観",when_meet: "気が合えば会いたい",cigarette: "吸わない",alcohol: "時々")
+User.create!(email: "19@m",password: 'pppppppp',sex: 2,first_name: "わかな",last_name: "佐野",first_kana: "ワカナ",last_kana: "サノ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 4,birth_date: 6,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "ふっくら",academic: "大学",blood_type: "A型",state: "岐阜県",birth_state: "三重県",brother: "次女",martial_status: "なし",children: "いない",salary: "~300~400万",job: "看護師",job_detail: "",academic_status: "卒業",holiday: "土日",check_point: "価値観",when_meet: "気が合えば会いたい",cigarette: "吸わない",alcohol: "飲まない")
+User.create!(email: "7@m",password: 'pppppppp',sex: 2,first_name: "由紀",last_name: "高井",first_kana: "ユキ",last_kana: "タカイ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 12,birth_date: 6,profile: "身長高い人が好きです。最近タバコを始めました",diagnoses_id: 1,tall: 157,weight_type: "ふつう",academic: "大学",blood_type: "O型",state: "京都府",birth_state: "三重県",brother: "次女",martial_status: "なし",children: "いない",salary: "~200万",job: "学生",job_detail: "大学3年生",academic_status: "在学",holiday: "平日",check_point: "価値観",when_meet: "気が合えば会いたい",cigarette: "時々",alcohol: "時々")
+User.create!(email: "6@m",password: 'pppppppp',sex: 2,first_name: "有紀子",last_name: "石崎",first_kana: "ユキコ",last_kana: "イシザキ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 9,birth_date: 22,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "ふつう",academic: "大学",blood_type: "O型",state: "京都府",birth_state: "三重県",brother: "長女",martial_status: "なし",children: "いない",salary: "~200万",job: "パート",job_detail: "スーパーの店員",academic_status: "卒業",holiday: "土日",check_point: "価値観",when_meet: "気が合えば会いたい",cigarette: "時々",alcohol: "時々")
+User.create!(email: "2@m",password: 'pppppppp',sex: 2,first_name: "恵美",last_name: "本田",first_kana: "エミ",last_kana: "ホンダ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 7,birth_date: 8,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "ふっくら",academic: "大学",blood_type: "AB型",state: "愛知県",birth_state: "愛知県",brother: "長女",martial_status: "なし",children: "いない",salary: "~200万",job: "保育士",job_detail: "",academic_status: "卒業",holiday: "平日",check_point: "価値観",when_meet: "気が合えば会いたい",cigarette: "吸う",alcohol: "飲む")
+User.create!(email: "8@m",password: 'pppppppp',sex: 2,first_name: "美香",last_name: "澤田",first_kana: "ミカ",last_kana: "サワダ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 1,birth_date: 2,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "ふつう",academic: "大学",blood_type: "B型",state: "静岡県",birth_state: "岐阜県",brother: "長女",martial_status: "なし",children: "いない",salary: "~200万",job: "学生",job_detail: "2年生",academic_status: "在学",holiday: "不定期",check_point: "価値観",when_meet: "メッセージをしっかり重ねてから",cigarette: "吸わない",alcohol: "時々")
+User.create!(email: "18@m",password: 'pppppppp',sex: 2,first_name: "なお",last_name: "北沢",first_kana: "ナオ",last_kana: "キタザワ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 7,birth_date: 21,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "小柄",academic: "大学",blood_type: "A型",state: "大阪府",birth_state: "愛知県",brother: "長女",martial_status: "なし",children: "いない",salary: "400~500万",job: "看護師",job_detail: "",academic_status: "卒業",holiday: "土日",check_point: "写真",when_meet: "気が合えば会いたい",cigarette: "吸わない",alcohol: "飲まない")
+User.create!(email: "5@m",password: 'pppppppp',sex: 2,first_name: "ゆり子",last_name: "立花",first_kana: "ユリコ",last_kana: "タチバナ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 2,birth_date: 22,profile: "休みの日はYouTubeを見るか録画したテレビ番組を見ています。",diagnoses_id: 1,tall: 157,weight_type: "ふつう",academic: "大学",blood_type: "A型",state: "京都府",birth_state: "三重県",brother: "長女",martial_status: "なし",children: "いない",salary: "~200万",job: "学生",job_detail: "大学3年生",academic_status: "在学",holiday: "平日",check_point: "価値観",when_meet: "まずは会いたい",cigarette: "時々",alcohol: "時々")
+User.create!(email: "17@m",password: 'pppppppp',sex: 2,first_name: "未来",last_name: "梁瀬",first_kana: "ミク",last_kana: "ヤナセ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 6,birth_date: 18,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "ふつう",academic: "大学",blood_type: "A型",state: "大阪府",birth_state: "三重県",brother: "三女",martial_status: "なし",children: "いない",salary: "300~400万",job: "保育士",job_detail: "",academic_status: "卒業",holiday: "土日",check_point: "写真",when_meet: "メッセージをしっかり重ねてから",cigarette: "吸わない",alcohol: "飲まない")
+User.create!(email: "14@m",password: 'pppppppp',sex: 2,first_name: "あさみ",last_name: "西岡",first_kana: "アサミ",last_kana: "ニシオカ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 8,birth_date: 17,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "ふつう",academic: "大学",blood_type: "A型",state: "三重県",birth_state: "三重県",brother: "三女",martial_status: "なし",children: "いない",salary: "~200万",job: "学生",job_detail: "大学2年生",academic_status: "在学",holiday: "土日",check_point: "その他",when_meet: "メッセージをしっかり重ねてから",cigarette: "吸わない",alcohol: "時々")
+User.create!(email: "3@m",password: 'pppppppp',sex: 2,first_name: "瞳",last_name: "荒木",first_kana: "ヒトミ",last_kana: "アラキ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 1,birth_date: 12,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "太め",academic: "大学",blood_type: "A型",state: "愛知県",birth_state: "愛知県",brother: "三女",martial_status: "なし",children: "いない",salary: "~200万",job: "学生",job_detail: "1年",academic_status: "在学",holiday: "土日",check_point: "プロフィールの充実度",when_meet: "まずは会いたい",cigarette: "吸う",alcohol: "飲む")
+User.create!(email: "9@m",password: 'pppppppp',sex: 2,first_name: "奈美",last_name: "寺崎",first_kana: "ナミ",last_kana: "テラサキ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 6,birth_date: 9,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "小柄",academic: "大学",blood_type: "B型",state: "静岡県",birth_state: "三重県",brother: "長女",martial_status: "なし",children: "いない",salary: "400~500万",job: "看護師",job_detail: "",academic_status: "卒業",holiday: "平日",check_point: "価値観",when_meet: "気が合えば会いたい",cigarette: "吸う",alcohol: "時々")
+User.create!(email: "10@m",password: 'pppppppp',sex: 2,first_name: "涼子",last_name: "関本",first_kana: "リョウコ",last_kana: "セキモト",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 3,birth_date: 25,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "小柄",academic: "大学",blood_type: "B型",state: "静岡県",birth_state: "愛知県",brother: "長女",martial_status: "なし",children: "いない",salary: "~300~400万",job: "パート",job_detail: "コンビニ店員",academic_status: "卒業",holiday: "土日",check_point: "価値観",when_meet: "気が合えば会いたい",cigarette: "吸わない",alcohol: "時々")
+User.create!(email: "12@m",password: 'pppppppp',sex: 2,first_name: "ゆうこ",last_name: "松下",first_kana: "ユウコ",last_kana: "マツシタ",phone_number: 9876543210,birth_year: [1966, 1977, 1988, 1999].sample,birth_month: 1,birth_date: 10,profile: "趣味はカラオケです！　レゴランドでバイトしてるので、レゴのことなら何でも聞いてください！",diagnoses_id: 1,tall: 157,weight_type: "ふつう",academic: "大学",blood_type: "A型",state: "三重県",birth_state: "三重県",brother: "長女",martial_status: "なし",children: "いない",salary: "~300~400万",job: "看護師",job_detail: "",academic_status: "卒業",holiday: "土日",check_point: "写真",when_meet: "気が合えば会いたい",cigarette: "吸わない",alcohol: "時々")
+
+
+LikesUser.create!(user_id: 1, to_likes_user_id: 2, status: 2)
+LikesUser.create!(user_id: 1, to_likes_user_id: 2, status: 2)
+LikesUser.create!(user_id: 1, to_likes_user_id: 2, status: 2)
+
+
+# ChatRoom.create!()
+
+# RoomUser.create!(user_id: 1, chat_room_id: 1)
+# RoomUser.create!(user_id: 3, chat_room_id: 1)
+
+
+
+# 10.times do |num|
+#   User.create!(
+#     email: "test#{num}@gmail.com",
+#     password: 'pppppppp',
+#     sex: [1,2].sample,
+#     first_name: "first_#{num}",
+#     last_name: "last_#{num}",
+#     first_kana: "first_kana#{num}",
+#     last_kana: "last_kana#{num}",
+#     phone_number: 9876543210,
+#     birth_year: [1966, 1977, 1988, 1999].sample,
+#     birth_month: 12.times.map{ |m| m + 1 }.sample,
+#     birth_date: 29.times.map{ |d| d + 1 }.sample,
+#   )
+# end
+
+# LikesUser.create!(user_id: 1, to_likes_user_id: 2, status: 2)
