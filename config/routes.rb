@@ -37,7 +37,7 @@ Rails.application.routes.draw do
       get '/chats/get_new_message_count/:room_id' => 'chats#get_new_message_count'
       get '/images/:user_id' => 'images#index'
       resources :likes, only: [:index, :create]
-      resources :chats, only: [:index, :show] 
+      resources :chats, only: [:index, :show]
       resources :images, only: [:create]
     end
     get '/users/get_info' => 'users#get_info'

@@ -10,6 +10,7 @@ import UserChatRoom from '../components/users/ChatRoom.vue'
 import UserShowProfile from '../components/users/ShowProfile.vue'
 import UserSuggestedList from '../components/users/SuggestedList.vue'
 import SurveyScreen from '../screens/SurveyScreen.vue'
+import SurveyResult from '../components/SurveyResult.vue'
 import LoginScreen from '../screens/Login.vue'
 import MainScreen from '../screens/main.vue'
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/surveys',
       name: 'SurveyScreen',
       component: SurveyScreen
+    },
+    {
+      path: '/surveys/result',
+      name: 'SurveyResult',
+      component: SurveyResult
     },
     {
       path: '/surveys/questions/:question_id',
