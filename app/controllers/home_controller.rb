@@ -7,7 +7,13 @@ class HomeController < ApplicationController
   def sign_up; end
   def auth; end
   def survey; end
-  def survey_result; end
+  def survey_result
+    # BUGFIX
+    unless current_user.diagnoses_id
+      current_user.diagnoses_id = 2
+      current_user.save!
+    end
+  end
 
   private
   def redirect_root
