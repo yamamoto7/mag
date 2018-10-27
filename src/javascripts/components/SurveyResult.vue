@@ -34,7 +34,7 @@
       </p>
     </div>
 
-    <p class='search'>相手を探しにいく</p>
+    <p class='search' @click='searchClick'>相手を探しにいく</p>
   </div>
 </template>
 
@@ -54,6 +54,9 @@
       this.currentUserImg = this.user.image;
     },
     methods: {
+      searchClick() {
+        window.location.pathname = '/';
+      }
     },
     components: {
     }
