@@ -64,6 +64,8 @@
   letter-spacing: 4px;
   text-align: center;
   color: #ffffff;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .card  {
@@ -117,7 +119,7 @@
   height: 120px;
   background-size: cover;
   position: relative;
-}
+ }
 
 .orange {
   background-image: url('/assets/orange_circle.png');
@@ -144,6 +146,8 @@
 .orange-circle-detail {
   position: absolute;
   top: 55px;
+  width: 95px;
+  font-size: 12px;
   left: 22px;
 }
 
@@ -156,6 +160,8 @@
 .blue-circle-detail {
   position: absolute;
   top: 55px;
+  width: 95px;
+  font-size: 12px;
   right: 20px;
 }
 

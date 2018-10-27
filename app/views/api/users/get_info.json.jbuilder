@@ -15,3 +15,6 @@ if @user.user_images.exists? then
 else
   json.image '/assets/icon.png'
 end
+json.diagnoses @user.diagnoses
+json.match_diagnoses Diagnosis.find(@user.diagnoses.match_id)
+

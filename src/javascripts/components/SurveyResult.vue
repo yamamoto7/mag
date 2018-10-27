@@ -6,15 +6,15 @@
       <span class='sub-title'>あなたの</span>
       <p class='title'>診断結果</p>
       <div class='mt-1'>
-        <p class="message">思い立ったらすぐ行動しちゃう</p>
-        <p class='diagnosis_type'>いつも冷静な論理派タイプ</p>
+        <p class="message">{{user.diagnoses.catchcopy.slice(0, 10)}}...</p>
+        <p class='diagnosis_type'>{{user.diagnoses.title}}</p>
       </div>
     </div>
 
     <div class='card'>
       <p class='result_type_label'>あなたの価値観</p>
       <p class='result_type'>
-        いつも冷静で、論理的に考えないと気が済まないのが特徴の、いわゆる「仕事のできるオンナ」。有名人に例えるなら・・・仲間由紀恵、菊川玲、アガサ・クリスティ
+        {{user.diagnoses.description}}
       </p>
     </div>
 
@@ -23,14 +23,14 @@
       <div class='type_checker'>
         <div class='circle orange' />
           <p class='orange-circle-title'>あなた</p>
-          <p class='orange-circle-detail'>論理派タイプ</p>
+          <p class='orange-circle-detail'>{{user.diagnoses.title}}</p>
         <p class='cross img' />
         <div class='circle blue' />
           <p class='blue-circle-title'>あいて</p>
-          <p class='blue-circle-detail'>論理派タイプ</p>
+          <p class='blue-circle-detail'>{{user.match_diagnoses.title}}</p>
       </div>
       <p class='result_type'>
-        いつも冷静で、論理的に考えないと気が済まないのが特徴の、いわゆる「仕事のできるオンナ」。有名人に例えるなら・・・仲間由紀恵、菊川玲、アガサ・クリスティ
+        ’{{user.diagnoses.catchcopy}}’なあなたは’{{user.match_diagnoses.catchcopy}}’のような人がぴったりです。
       </p>
     </div>
 
@@ -52,6 +52,12 @@
       const response = await http.get('/api/users/get_info')
       this.user = response.data;
       this.currentUserImg = this.user.image;
+      console.log(this.user.id);
+      console.log('self')
+      console.log(this.user.diagnoses);
+      console.log('matched')
+      console.log(this.user.match_diagnoses);
+      console.log(response.data);
     },
     methods: {
       searchClick() {
