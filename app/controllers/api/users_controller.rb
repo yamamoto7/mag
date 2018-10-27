@@ -1,7 +1,6 @@
 class Api::UsersController < ApplicationController
   def get_info
     @user = current_user
-    
   end
   def index
     @users = User.all.where.not(sex: current_user.sex)

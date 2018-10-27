@@ -2,7 +2,7 @@
   <div id="chat-body">
     <div class="tabs-box">
       <div class="tabs">
-        <div class="back">      
+        <div class="back">
           <span
             @click="this.ClickBackBtn"
             class="back-arrow"

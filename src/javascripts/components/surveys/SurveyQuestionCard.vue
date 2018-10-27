@@ -64,12 +64,23 @@ export default {
           });
         } else {
           // TODO 最後の設問の時だけ別のところに飛ばす
-          this.$router.push('/')
-          window.reload(); // FXIME ごめんなさい。なんかリダイレクトがうまく行かなかったんです。
+          this.$router.push('/surveys/result');
+          // window.location.pathname = '/surveys/result'
           return; // 74の処理はしたくないから return;
         }
       } catch (error) {
         console.log(error)
+        if (this.question_id !== 18) {
+          this.$router.push({
+            name: 'SurveyQuestionScreen',
+            params: { question_id: this.question_id += 1 }
+          });
+        } else {
+          // TODO 最後の設問の時だけ別のところに飛ばす
+          this.$router.push('/surveys/result');
+          // window.location.pathname = '/surveys/result'
+          return; // 74の処理はしたくないから return;
+        }
       }
       this.fetchQuestionView();
     },
