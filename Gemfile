@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.5.2'
 gem 'rails', '~> 5.2.1'
 
 # DB
-gem 'mysql2', '0.5.1'
+# gem 'mysql2'
+gem 'sqlite3'
 
 # Server
 gem 'puma', '~> 3.11'
