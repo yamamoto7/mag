@@ -386,8 +386,8 @@ export default {
       try {
         await http.delete('/api/users/sign_out')
         // リダイレクト先指定。
-        await this.$router.go()
         this.$router.push('/')
+        document.location = '/'
       } catch (error) {
         // サーバーもしくはネットワークのエラーが返ってきた場合の処理。
         console.log(error)

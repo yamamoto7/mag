@@ -55,8 +55,6 @@ export default {
           survey_questions_id: this.question_id
         });
 
-        // 何がしたいんやこいつ
-        await this.$router.go();
         if (this.question_id !== 18) {
           this.$router.push({
             name: 'SurveyQuestionScreen',

@@ -77,8 +77,7 @@ export default {
     async onSubmit () {
       try {
         await http.post('/api/users/images', this.image)
-        await this.$router.go()
-        this.$router.push('/surveys')
+        document.location = ('/surveys')
       } catch (e) {
         console.log(e)
       }
