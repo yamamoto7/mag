@@ -12,7 +12,7 @@ import UserSaveImage from '../javascripts/components/users/SaveImage.vue'
 import SurveyScreen from '../javascripts/screens/SurveyScreen.vue'
 
 
-Vue.prototype.$cable  = ActionCable.createConsumer('ws://team3.intern.ate.am:3000/cable')
+Vue.prototype.$cable  = ActionCable.createConsumer('http://localhost:5000/cable')
 
 new Vue({
   router,
