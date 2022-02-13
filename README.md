@@ -13,7 +13,7 @@
 学生の6人のチームで構成。内訳は↓
   - ビジネスプランナー ２人 (PM的なリーダもココ)
   - デザイナー ２人
-  - エンジニア ２人 (← @fumihumi)
+  - エンジニア ２人 (← @yamamoto7, @fumihumi)
 
 ![サービスのGif](https://gyazo.com/4e133a3e56af48b2d3276faaadb3b0d9.gif)
 
